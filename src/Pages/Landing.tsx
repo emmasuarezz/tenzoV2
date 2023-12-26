@@ -76,7 +76,6 @@ function Landing() {
               <BlogCard
                 title={entry.title}
                 body={entry.body}
-                img={entry.img}
                 date={entry.date}
               />
             );
