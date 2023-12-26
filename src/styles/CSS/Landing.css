@@ -84,6 +84,9 @@ main > div {
 }
 
 .hero-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-inline: 5px;
   width: 50%;
   max-width: 400px;
@@ -100,7 +103,6 @@ main > div {
 }
 .hero-button:hover {
   cursor: pointer;
-  background-color: rgba(236, 28, 35, 0.1764705882);
   border: 3px dashed;
   border-color: #ec1c24;
   color: #ec1c24;
@@ -117,9 +119,12 @@ main > div {
   margin-bottom: 35px;
   border-radius: 100%;
   background: linear-gradient(0deg, rgba(40, 240, 96, 0) 12.92%, rgba(40, 240, 96, 0.05) 33.75%, rgba(40, 240, 96, 0.13) 48.85%, rgba(40, 240, 96, 0.27) 67.08%, rgba(40, 240, 96, 0.55) 92.6%);
+  transition: transform 0.2s ease-in-out;
 }
 .ball-wrapper:hover {
   cursor: pointer;
+  box-shadow: 0 0 15px 5px;
+  transform: scale(1.05);
 }
 .ball-image {
   width: 100%;

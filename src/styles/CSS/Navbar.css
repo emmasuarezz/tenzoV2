@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Teko:wght@300;400;500&display=swap);
 .header-primary {
   padding-top: 33px;
-  background: linear-gradient(180deg, rgba(240, 90, 40, 0.2) 0%, rgba(28, 27, 29, 0) 100%);
   width: 100%;
   min-height: 150px;
   display: flex;
@@ -24,7 +23,6 @@
   padding-top: 33px;
   padding-left: 60px;
   padding-right: 60px;
-  background: linear-gradient(180deg, rgba(240, 90, 40, 0.2) 0%, rgba(28, 27, 29, 0) 100%);
   width: 100%;
   min-height: 150px;
   display: flex;
@@ -100,6 +98,13 @@
   }
 }
 
+.gradient-green {
+  background: linear-gradient(180deg, rgba(40, 240, 96, 0.2) 0%, rgba(28, 27, 29, 0) 100%);
+}
+.gradient-orange {
+  background: linear-gradient(180deg, rgba(240, 90, 40, 0.2) 0%, rgba(28, 27, 29, 0) 100%);
+}
+
 .deco-wrapper:nth-child(1) {
   width: 100%;
   /* max-width: 333px; */
@@ -164,9 +169,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.logo:hover {
-  cursor: pointer;
 }
 
 /*# sourceMappingURL=Navbar.css.map */

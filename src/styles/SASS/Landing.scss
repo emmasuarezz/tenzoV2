@@ -46,7 +46,7 @@ main {
     font-size: 1.3rem;
     margin-top: 16px;
     max-width: 500px;
-    color: map-get(vars.$colors, "lOrange");
+    color: map-get(vars.$colors, "orange");
     @media screen and (max-width: 1245px) {
       text-align: center;
       padding-inline: 10px;
@@ -80,6 +80,9 @@ main {
   }
 }
 .hero-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-inline: 5px;
   width: 50%;
   max-width: 400px;
@@ -87,12 +90,12 @@ main {
   background-color: map-get(vars.$colors, "grey");
   transition: background-color 0.6s ease-in-out;
 
-  color: map-get(vars.$colors, "lOrange");
+  color: map-get(vars.$colors, "orange");
   font-size: 1.7rem;
   font-weight: 300;
 
   border: 2px solid;
-  border-color: map-get(vars.$colors, "lOrange");
+  border-color: map-get(vars.$colors, "orange");
   border-radius: 22px;
   transition: transform 0.2s ease-in-out;
   &:hover {
@@ -116,8 +119,11 @@ main {
 
     border-radius: 100%;
     background: vars.$green-gradient;
+    transition: transform 0.2s ease-in-out;
     &:hover {
       cursor: pointer;
+      box-shadow: 0 0 15px 5px map-get(vars.$colors, "alpha-Green");
+      transform: scale(1.05);
     }
   }
   &-image {

@@ -4,10 +4,11 @@ type BlogCard = {
   title: string;
   body: string;
   img: string;
+  date: string;
   accent?: string;
 };
 
-function BlogCard({ title, body, img, accent }: BlogCard) {
+function BlogCard({ title, body, img, date, accent }: BlogCard) {
   return (
     <div className="blog-card">
       <div className="blog-card-img">
@@ -18,7 +19,7 @@ function BlogCard({ title, body, img, accent }: BlogCard) {
           {title} <span>{accent}</span>
         </h3>
         <p>{body}</p>
-        <p className="date">12/25/2023</p>
+        <p className="date">{date}</p>
       </div>
     </div>
   );

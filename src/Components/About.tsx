@@ -7,7 +7,7 @@ function About() {
     <>
       <div className="w-70 h-full about-text">
         <p>
-          MY name is Emmanuel Suárez. I am currently pursuing an{" "}
+          My name is Emmanuel Suárez. I am currently pursuing an{" "}
           <span className="accent-green">Electrical Engineering</span> degree at
           UdelaR. Since my early school days, I've been driven by an insatiable{" "}
           <span className="accent-green">curiosity</span>, always eager to{" "}

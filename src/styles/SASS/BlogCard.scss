@@ -79,6 +79,6 @@
 
 .blog-card:hover {
   transform: scale(0.98);
-  box-shadow: 0px 5px 25px 25px map-get(vars.$colors, "alpha-dGreen") inset;
+  box-shadow: 0px 5px 20px 10px map-get(vars.$colors, "alpha-grey") inset;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }

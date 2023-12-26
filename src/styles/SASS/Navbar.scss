@@ -2,11 +2,7 @@
 
 .header-primary {
   padding-top: 33px;
-  background: linear-gradient(
-    180deg,
-    rgba(240, 90, 40, 0.2) 0%,
-    rgba(28, 27, 29, 0) 100%
-  );
+
   width: 100%;
   min-height: 150px;
   display: flex;
@@ -28,11 +24,7 @@
   padding-top: 33px;
   padding-left: 60px;
   padding-right: 60px;
-  background: linear-gradient(
-    180deg,
-    rgba(240, 90, 40, 0.2) 0%,
-    rgba(28, 27, 29, 0) 100%
-  );
+
   width: 100%;
   min-height: 150px;
   display: flex;
@@ -109,6 +101,20 @@
     align-items: center;
   }
 }
+
+.gradient {
+  &-green {
+    background: linear-gradient(180deg, #28f06033 0%, #1c1b1d00 100%);
+  }
+  &-orange {
+    background: linear-gradient(
+      180deg,
+      rgba(240, 90, 40, 0.2) 0%,
+      rgba(28, 27, 29, 0) 100%
+    );
+  }
+}
+
 .deco-wrapper:nth-child(1) {
   width: 100%;
   /* max-width: 333px; */
@@ -168,8 +174,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  &:hover {
-    cursor: pointer;
-  }
 }

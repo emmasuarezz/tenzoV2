@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { UserContext } from "../Context/userContext";
 
 import "../styles/CSS/Landing.css";
@@ -10,13 +11,13 @@ import Behance from "../assets/behance.png";
 import GitHub from "../assets/github.svg";
 import LinkedIn from "../assets/linkedin.svg";
 import Separator from "../assets/gradient separator.svg";
-import reactLogo from "../assets/reactLogo.png";
+import blogEntries from "../assets/JSON/blog.json";
 
 function Landing() {
   const { user } = useContext(UserContext);
   return (
     <>
-      <Navbar />
+      <Navbar color="gradient-orange" />
       <main>
         <div>
           <section className="hero">
@@ -32,8 +33,12 @@ function Landing() {
               get in contact. Hope you like it all.
             </p>
             <div className="flex-100-between mt-17 p-12">
-              <button className="hero-button">projects</button>
-              <button className="hero-button">contact</button>
+              <Link to="/projects" className="hero-button">
+                projects
+              </Link>
+              <Link to="/contact" className="hero-button">
+                contact
+              </Link>
             </div>
           </section>
 
@@ -66,11 +71,16 @@ function Landing() {
         </section>
         <section className="blog-section">
           <h2 className="blog-title">What I've been up to lately...</h2>
-          <BlogCard
-            title="Goodbye Learning Camp"
-            body="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
-            img={reactLogo}
-          />
+          {blogEntries.map((entry) => {
+            return (
+              <BlogCard
+                title={entry.title}
+                body={entry.body}
+                img={entry.img}
+                date={entry.date}
+              />
+            );
+          })}
         </section>
       </main>
       <Footer />

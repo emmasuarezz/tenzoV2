@@ -1,14 +1,35 @@
 import logo from "../assets/logo.svg";
 import "../styles/CSS/Navbar.css";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-import { useState } from "react";
+type NavbarType = {
+  color: string;
+};
 
-function Navbar() {
-  const [active, setActive] = useState("projects");
+function Navbar({ color }: NavbarType) {
+  const [active, setActive] = useState("");
   const [showList, setShowList] = useState(false);
 
+  useEffect(() => {
+    const url = window.location.href;
+
+    if (url.includes("projects")) {
+      setActive("projects");
+    }
+    if (url.includes("about")) {
+      setActive("about");
+    }
+    if (url.includes("contact")) {
+      setActive("contact");
+    }
+  }, []);
+
+  const navPrimaryClass = `header-primary ${color}`;
+  const navSecondaryClass = `header-secondary ${color}`;
+
   const navPrimary = (
-    <header className="header-primary">
+    <header className={navPrimaryClass}>
       <div className="deco-wrapper">
         <div className="left-ornament-top"></div>
         <div className="left-ornament-bottom"></div>
@@ -24,28 +45,26 @@ function Navbar() {
   );
 
   const navSecondary = (
-    <header className="header-secondary">
-      <div onClick={() => setShowList(!showList)} className="logo">
+    <header className={navSecondaryClass}>
+      <Link to="/home" className="logo">
         <img src={logo} alt="" />
-      </div>
+      </Link>
       <nav>
         <ul>
           <li>
-            <a
+            <Link
               id="projects"
-              href="#"
               className={active == "projects" ? "active" : "not-active"}
-              onClick={() => setActive("projects")}
+              to="/projects"
             >
               projects
-            </a>
+            </Link>
           </li>
           <li>
             <a
               id="about"
               href="#"
               className={active == "about" ? "active" : "not-active"}
-              onClick={() => setActive("about")}
             >
               about me
             </a>
@@ -55,7 +74,6 @@ function Navbar() {
               id="contact"
               href="#"
               className={active == "contact" ? "active" : "not-active"}
-              onClick={() => setActive("contact")}
             >
               contact
             </a>

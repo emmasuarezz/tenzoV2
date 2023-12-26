@@ -52,7 +52,7 @@
       border-radius: 0.5rem;
       font-size: 1.5rem;
       font-weight: 400;
-      background-color: map-get(vars.$colors, "lOrange");
+      background-color: map-get(vars.$colors, "orange");
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
       transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
@@ -78,7 +78,7 @@
 
       &:hover {
         transform: scale(1.15);
-        background-color: map-get(vars.$colors, "lOrange");
+        background-color: map-get(vars.$colors, "orange");
       }
       &:active {
         background-color: map-get(vars.$colors, "dOrange");

@@ -1,5 +1,9 @@
 import "../styles/CSS/footer.css";
 import logo from "../assets/logoBW.svg";
+import Behance from "../assets/behance.png";
+import GitHub from "../assets/github.svg";
+import LinkedIn from "../assets/linkedin.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,14 +13,22 @@ const Footer = () => {
         <div className="left-ornament-bottom"></div>
       </div>
       <div className="logo">
-        <img src={logo} alt="" />
+        <Link to={"/home"}>
+          <img src={logo} alt="" />
+        </Link>
         <p>
           <span>tenzo</span>.tech
         </p>
         <div className="flex">
-          <div className="socials-balls"></div>
-          <div className="socials-balls"></div>
-          <div className="socials-balls"></div>
+          <div className="socials-balls">
+            <img src={GitHub} alt="" />
+          </div>
+          <div className="socials-balls">
+            <img src={LinkedIn} alt="" />
+          </div>
+          <div className="socials-balls">
+            <img src={Behance} alt="" />
+          </div>
         </div>
         <p>made with a lot of love, and mate {`<3`}</p>
       </div>
