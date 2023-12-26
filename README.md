@@ -1,30 +1,12 @@
-# React + TypeScript + Vite
+# tenzoV2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hey there! This is the second iteration of my personal website, but in reality is the first one that will be fully finished and with some projects in it. This is a project by itself though, so I will be updating it as I go along. I have grown a lot since I started learning about web dev and I am very excited to show you what I can do now!
+Check out the website for a more in-depth look at my projects and my skills. [tenzo.tech](https://tenzo.tech)
 
-Currently, two official plugins are available:
+## design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I am a designer as well, so I like spending quite some time inside Figma designing my websites before I start coding them. It's a simple layout yet very effective, and I'm proud to say it's fully responsive as well and it wasn't a headache to make it so.
 
-## Expanding the ESLint configuration
+## stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+I built this website using React and SASS for the front-end, so far it doesn't have a back-end, but I am planning on adding one in the future. I am using [react-router-dom](https://reactrouter.com/web/guides/quick-start) for the routing.
