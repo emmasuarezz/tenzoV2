@@ -9,4 +9,5 @@ I am a designer as well, so I like spending quite some time inside Figma designi
 
 ## stack
 
-I built this website using React and SASS for the front-end, so far it doesn't have a back-end, but I am planning on adding one in the future. I am using [react-router-dom](https://reactrouter.com/web/guides/quick-start) for the routing.
+I built this website using React with TS and SASS for the front-end, so far it doesn't have a back-end, but I am planning on adding one in the future. I am using [react-router-dom](https://reactrouter.com/web/guides/quick-start) for the routing.
+The website is hosted in [Vercel](https://vercel.com/), and the custom domain is thanks to the GitHub Student Pack. We love a supportive community! <3
