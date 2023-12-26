@@ -1,8 +1,18 @@
 [
   {
-    "title": "Goodbye Learning Camp",
-    "body": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    "title": "It's coming:",
+    "accent": "tenzo.star",
+    "body": "Man I got sick of using the same old boring websites to look up my birth chart, and since I'm an astroDev I decided to make my own . It's still in development, but I'm really excited about it. I'm learning a lot of new things. I hope I can finish it soon, so I can share it with you guys. I'm sure you'll love it!",
+    "image": "star",
     "date": "12/25/2023",
-    "image": "react"
+    "id": "blog-02"
+  },
+  {
+    "title": "Goodbye Learning Camp",
+    "accent": "",
+    "body": "I had a great time at the learning camp. Thanks to Rootstrap, the company that organized it, I learned a lot of new things and met a lot of new people. It was a great introduction to React and the ones who mentored us were really good, they were always there to help us and answer our questions. I hope I can attend another one of these camps in the future, because they are really helpful, I did this website using all the knowledge I got from the camp and I'm really proud of it. I hope you like it too!",
+    "date": "12/20/2023",
+    "image": "react",
+    "id": "blog-01"
   }
 ]

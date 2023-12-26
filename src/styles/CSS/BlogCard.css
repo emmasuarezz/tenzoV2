@@ -10,6 +10,8 @@
   border-radius: 20px;
   padding: 20px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fade-in linear forwards;
+  animation-timeline: view(700px 0px);
 }
 .blog-card-img {
   min-width: 300px;
@@ -36,6 +38,7 @@
 .blog-card-content h3 {
   width: 100%;
   font-family: "Teko", sans-serif;
+  line-height: 1.1;
   padding: 10px;
   background-color: #25c050;
   font-size: 3rem;
@@ -79,6 +82,17 @@
   transform: scale(0.98);
   box-shadow: 0px 5px 20px 10px rgba(28, 27, 30, 0.1254901961) inset;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    scale: 0.6;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=BlogCard.css.map */

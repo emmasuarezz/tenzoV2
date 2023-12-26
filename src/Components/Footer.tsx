@@ -21,10 +21,17 @@ const Footer = () => {
         </p>
         <div className="flex">
           <div className="socials-balls">
-            <img src={GitHub} alt="" />
+            <a href="https://github.com/emmasuarezz" target="_blank">
+              <img src={GitHub} alt="" />
+            </a>
           </div>
           <div className="socials-balls">
-            <img src={LinkedIn} alt="" />
+            <a
+              href="https://www.linkedin.com/in/emmanuelsuarezt/"
+              target="_blank"
+            >
+              <img src={LinkedIn} alt="" />
+            </a>
           </div>
           <div className="socials-balls">
             <img src={Behance} alt="" />

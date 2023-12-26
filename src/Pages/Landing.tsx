@@ -75,9 +75,11 @@ function Landing() {
             return (
               <BlogCard
                 title={entry.title}
+                accent={entry.accent}
                 body={entry.body}
                 date={entry.date}
                 image={entry.image}
+                key={entry.id}
               />
             );
           })}

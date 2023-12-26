@@ -37,6 +37,7 @@
     h3 {
       width: 100%;
       font-family: vars.$ff-teko;
+      line-height: 1.1;
       padding: 10px;
       background-color: map-get(vars.$colors, "dGreen");
       font-size: 3rem;
@@ -75,10 +76,24 @@
   @media screen and (max-width: 820px) {
     flex-direction: column;
   }
+
+  animation: fade-in linear forwards;
+  animation-timeline: view(700px 0px);
 }
 
 .blog-card:hover {
   transform: scale(0.98);
   box-shadow: 0px 5px 20px 10px map-get(vars.$colors, "alpha-grey") inset;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    scale: 0.6;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }

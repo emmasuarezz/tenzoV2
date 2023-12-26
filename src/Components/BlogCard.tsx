@@ -1,5 +1,6 @@
 import "../styles/CSS/BlogCard.css";
 import reactLogo from "../assets/reactLogo.png";
+import tenzoStar from "../assets/tenzoStar.svg";
 
 type BlogCard = {
   title: string;
@@ -11,10 +12,11 @@ type BlogCard = {
 
 const imageMap = {
   react: reactLogo,
+  star: tenzoStar,
 };
 
 function BlogCard({ title, body, date, image, accent }: BlogCard) {
-  const imageData = imageMap[image as "react"];
+  const imageData = imageMap[image as "react" | "star"];
   return (
     <div className="blog-card">
       <div className="blog-card-img">

@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Teko:wght@300;400;500&display=swap);
+.card-wrapper {
+  margin-top: 60px;
+}
+.card-header {
+  font-size: 1.6rem;
+  gap: 3rem;
+  display: flex;
+  align-items: center;
+  color: #ec1c24;
+}
+.card-header h4 {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.card-header span {
+  color: #28f060;
+  font-weight: 400;
+}
+@media screen and (max-width: 670px) {
+  .card-header {
+    gap: 0;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+}
+.card-body {
+  color: white;
+  font-size: 1.2rem;
+}
+.card-body span {
+  color: #28f060;
+}
+.card-body span:hover {
+  color: #ec1c24;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=ProjectCard.css.map */

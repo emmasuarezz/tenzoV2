@@ -1,0 +1,22 @@
+.projects-container {
+  width: 100%;
+  margin-top: 60px;
+  padding-inline: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.7rem;
+  }
+
+  h2 {
+    color: white;
+    opacity: 0.75;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+}
