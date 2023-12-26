@@ -77,6 +77,7 @@ function Landing() {
                 title={entry.title}
                 body={entry.body}
                 date={entry.date}
+                image={entry.image}
               />
             );
           })}
