@@ -16,9 +16,9 @@ function Welcome() {
 
   return (
     <div className="container">
-      <h1>Hello there!</h1>
-      <h2>You will see everything in just a second,</h2>
-      <h3>but first, tell me your name please.</h3>
+      <h1 className="title">Hello there!</h1>
+      <h2>You will see everything in just a second.</h2>
+      <h3>But first, tell me your name please.</h3>
       <div className="input-group">
         <input
           onChange={handleNameChange}
