@@ -19,9 +19,7 @@ function Projects() {
               id={project.id}
               title={project.title}
               description={project.description}
-              tech1={project.tech1}
-              tech2={project.tech2}
-              tech3={project.tech3}
+              tech={project.tech}
             />
           ))}
         </section>
