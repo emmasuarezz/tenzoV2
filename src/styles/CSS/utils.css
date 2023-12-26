@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Teko:wght@300;400;500&display=swap);
+.flex-100-between {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-inline: 0;
+}
+@media screen and (max-width: 1245px) {
+  .flex-100-between {
+    justify-content: center;
+  }
+}
+.flex-100-socials {
+  display: flex;
+  max-width: 352px;
+  width: 100%;
+  justify-content: space-between;
+  align-self: flex-end;
+  margin-inline: 0;
+}
+@media screen and (max-width: 1245px) {
+  .flex-100-socials {
+    align-self: center;
+  }
+}
+
+.flex-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-17 {
+  margin-top: 17px;
+}
+.mt-42 {
+  margin-top: 42px;
+}
+
+.p-12 {
+  padding-inline: 12px;
+}
+
+.w-70 {
+  width: 70%;
+}
+.w-30 {
+  width: 30%;
+}
+@media screen and (max-width: 1245px) {
+  .w-30 {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 64px;
+  }
+}
+
+.h-full {
+  height: 100%;
+}
+
+.overflow-h {
+  overflow-x: hidden;
+}
+
+.accent-green {
+  color: #28f060;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=utils.css.map */

@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Teko:wght@300;400;500&display=swap);
+.about-text {
+  padding: 44px;
+  padding-top: 66px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.about-text p {
+  width: 100%;
+  line-height: 1.7;
+}
+@media screen and (max-width: 1245px) {
+  .about-text p {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .about-text p {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 1245px) {
+  .about-text {
+    padding: 22px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .about-text {
+    padding: 11px;
+  }
+}
+.about-photo {
+  width: 100%;
+  border-radius: 22px;
+  min-width: 300px;
+}
+
+.photo-container {
+  padding: 15px;
+  background-color: #1c1b1e;
+}
+
+/*# sourceMappingURL=About.css.map */

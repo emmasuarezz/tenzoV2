@@ -1,0 +1,78 @@
+@use "sass:map";
+@use "vars";
+.flex-100 {
+  &-between {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-inline: 0;
+
+    @media screen and (max-width: 1245px) {
+      justify-content: center;
+    }
+  }
+
+  &-socials {
+    display: flex;
+    max-width: 352px;
+    width: 100%;
+    justify-content: space-between;
+    align-self: flex-end;
+    margin-inline: 0;
+
+    @media screen and (max-width: 1245px) {
+      align-self: center;
+    }
+  }
+}
+
+.flex-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt {
+  &-17 {
+    margin-top: 17px;
+  }
+  &-42 {
+    margin-top: 42px;
+  }
+}
+
+.p-12 {
+  padding-inline: 12px;
+}
+
+.w {
+  &-70 {
+    width: 70%;
+  }
+  &-30 {
+    width: 30%;
+    @media screen and (max-width: 1245px) {
+      width: 100%;
+      max-width: 350px;
+      margin-bottom: 64px;
+    }
+  }
+}
+
+.h {
+  &-full {
+    height: 100%;
+  }
+}
+
+.overflow-h {
+  overflow-x: hidden;
+}
+
+.accent {
+  &-green {
+    color: map-get(vars.$colors, "green");
+    font-weight: 700;
+  }
+}

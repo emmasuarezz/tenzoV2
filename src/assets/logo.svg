@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 585 485">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f05a28;
+        stroke: #ec1c24;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        fill: #ec1c24;
+        stroke: #f05a28;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-2" x="1.62" y="184.28" width="59.61" height="297.92" transform="translate(.61 -.06) rotate(.1)"/>
+    <rect class="cls-2" x="168.93" y="184.59" width="59.61" height="297.92" transform="translate(.61 -.36) rotate(.1)"/>
+    <polygon class="cls-2" points="1.88 184.23 61.49 184.34 228.28 482.56 168.67 482.45 1.88 184.23"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="381.78" y="148.09" width="47.7" height="354.14" transform="translate(731.49 -79.9) rotate(90.1)"/>
+    <rect class="cls-1" x="381.55" y="281.96" width="47.7" height="354.14" transform="translate(865.13 54.44) rotate(90.1)"/>
+    <polygon class="cls-1" points="582.74 301.64 582.66 349.33 228.28 482.56 228.37 434.86 582.74 301.64"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="114.59" y="6.62" width="65.22" height="290.53" transform="translate(299.34 4.95) rotate(90.1)"/>
+    <rect class="cls-1" x="228.86" y="3.13" width="63.61" height="297.92" transform="translate(521.05 304.66) rotate(-179.9)"/>
+  </g>
+  <path class="cls-2" d="m437.98,3.46c-80.22-.15-145.37,66.42-145.51,148.68-.14,82.29,64.77,149.09,144.99,149.24,80.25.15,145.39-66.42,145.54-148.7.14-82.26-64.77-149.06-145.02-149.21Zm-.39,223.22c-40-.07-72.38-33.37-72.31-74.41.07-41.01,32.57-74.19,72.56-74.12,40.02.07,72.38,33.37,72.31,74.38-.07,41.04-32.54,74.22-72.56,74.14Z"/>
+</svg>
