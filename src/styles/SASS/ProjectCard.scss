@@ -4,6 +4,14 @@
 .card {
   &-wrapper {
     margin-top: 60px;
+    padding: 10px;
+    border-radius: 15px;
+    &:hover {
+      transform: scale(1.025);
+      background-color: map-get(vars.$colors, "alpha-orange");
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
   }
 
   &-header {

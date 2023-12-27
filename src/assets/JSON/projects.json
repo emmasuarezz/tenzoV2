@@ -3,12 +3,14 @@
     "id": "01",
     "title": "tnz.ID",
     "description": "It's a web app powered by the Spotify API, its main purpose it's to provide with metadata of different tracks. The user can log in with their Spotify account so they can see all their playlists and also gain access to different information about their account like what artist is the one they play the most and so on. It has a built in search bar that acts just like the one in the Spotify app, meaning that your searches will be influenced by your account and the results you'll see first will be more accurate and you-like.",
-    "tech": ["react.js", "sass", "spotify api"]
+    "tech": ["react.js", "sass", "spotify api"],
+    "link": "ID"
   },
   {
     "id": "02",
     "title": "tenzo.tech",
     "description": "Second iteration of my personal website/portfolio. Hey don't judge me, everytime I learn something new or get too bored I will update this thing. It's also a great way to experiment with different layouts and technologies. For example, I've been using Tailwind CSS to style my projects lately, and don't get me wrong, it's great, but to be honest with you guys I've been watching too much of Kevin Powell and I got inspired to write my own classes and styles.",
-    "tech": ["react.js", "sass"]
+    "tech": ["react.js", "sass"],
+    "link": "tech"
   }
 ]

@@ -20,6 +20,7 @@ function Projects() {
               title={project.title}
               description={project.description}
               tech={project.tech}
+              link={project.link}
             />
           ))}
         </section>

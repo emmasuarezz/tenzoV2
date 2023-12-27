@@ -1,6 +1,14 @@
 @import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Teko:wght@300;400;500&display=swap);
 .card-wrapper {
   margin-top: 60px;
+  padding: 10px;
+  border-radius: 15px;
+}
+.card-wrapper:hover {
+  transform: scale(1.025);
+  background-color: rgba(240, 90, 40, 0.3137254902);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 .card-header {
   font-size: 1.6rem;

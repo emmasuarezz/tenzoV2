@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Teko:wght@300;400;500&display=swap);
+.header-wrapper {
+  padding-inline: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+.header-wrapper h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+.header-wrapper h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  max-width: 750px;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+.header-wrapper h4 {
+  font-weight: 400;
+  color: #ec1c24;
+  font-size: 1.2rem;
+}
+.header-wrapper h4 span {
+  color: #28f060;
+}
+
+.selector {
+  font-size: 1.5rem;
+  display: flex;
+  width: 100%;
+  padding-inline: 30px;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 5px;
+}
+.selector-dash {
+  font-weight: 400;
+  color: white;
+  opacity: 0.75;
+}
+
+.active {
+  font-weight: 700;
+  opacity: 1 !important;
+  color: #f05a28;
+}
+.active:hover {
+  cursor: pointer;
+}
+
+.no-active {
+  font-weight: 300;
+  color: white;
+  opacity: 0.75;
+}
+.no-active:hover {
+  cursor: pointer;
+}
+
+.content {
+  padding-inline: 60px;
+}
+.content h3 {
+  font-size: 2rem;
+  color: #28f060;
+}
+.content p {
+  font-size: 1.2rem;
+  color: white;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+/*# sourceMappingURL=ProjectDetail.css.map */
