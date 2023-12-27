@@ -70,13 +70,13 @@ function Navbar({ color }: NavbarType) {
             </a>
           </li>
           <li>
-            <a
+            <Link
               id="contact"
-              href="#"
               className={active == "contact" ? "active" : "not-active"}
+              to="/contact"
             >
               contact
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

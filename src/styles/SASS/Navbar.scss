@@ -103,6 +103,11 @@
     opacity: 0.75;
     color: #f05a28;
     font-weight: 300;
+
+    &:hover {
+      opacity: 1;
+      font-weight: 400;
+    }
   }
 
   @media screen and (max-width: 960px) {

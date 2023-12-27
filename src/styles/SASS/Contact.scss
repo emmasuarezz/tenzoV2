@@ -1,0 +1,98 @@
+@use "sass:map";
+@use "vars";
+
+.contact-container {
+  width: 100%;
+  margin-top: 60px;
+  padding-inline: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.7rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    color: white;
+    opacity: 0.75;
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.4rem;
+
+    span {
+      color: map-get(vars.$colors, "green");
+      font-weight: 500;
+    }
+  }
+
+  .socials-wrapper {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* creates 2 columns */
+    grid-template-rows: 1fr 1fr; /* creates 2 rows */
+    gap: 10px;
+
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-family: vars.$ff-teko;
+      min-width: 350px;
+      min-height: 150px;
+      border-radius: 20px;
+      background-color: map-get(vars.$colors, "dOrange");
+      box-shadow: inset 0px 0px 20px 10px rgba(255, 255, 0, 0.395);
+
+      transition: all 0.2s ease-in-out;
+
+      h3 {
+        opacity: 0.9;
+        font-weight: 400;
+        color: map-get(vars.$colors, "orange");
+      }
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: inset 0px 0px 20px 10px yellow;
+        transform: scale(1.025);
+
+        h3 {
+          opacity: 1;
+          color: yellow;
+          transition: all 0.1s ease-in-out;
+        }
+      }
+    }
+
+    @media screen and (max-width: 960px) {
+      display: grid;
+      grid-template-columns: 1fr; /* creates 1 column */
+      gap: 10px;
+    }
+  }
+
+  .cv {
+    opacity: 0.75;
+    color: white;
+    font-weight: 300;
+
+    transition: all 0.2s ease-in-out;
+    span {
+      font-weight: 400;
+      color: map-get(vars.$colors, "dOrange");
+    }
+    &:hover {
+      opacity: 1;
+      font-weight: 400;
+      text-decoration: underline;
+      color: map-get(vars.$colors, "dOrange");
+      cursor: pointer;
+    }
+  }
+}
