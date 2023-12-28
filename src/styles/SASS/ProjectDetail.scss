@@ -73,7 +73,13 @@
 
 .content {
   padding-inline: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h3 {
+    line-height: 1.1;
+    align-self: flex-start;
+    margin-bottom: 1rem;
     font-size: 2rem;
     color: map-get(vars.$colors, "green");
   }
@@ -83,5 +89,12 @@
     color: white;
     opacity: 0.8;
     margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    max-width: 400px;
+    margin-block: 2rem;
   }
 }

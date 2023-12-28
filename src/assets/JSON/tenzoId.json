@@ -1,5 +1,23 @@
 [
   {
+    "content": [
+      "HEADING",
+      "CONTENT",
+      "PHOTO",
+      "CONTENT",
+      "PHOTO",
+      "HEADING",
+      "CONTENT",
+      "CONTENT",
+      "PHOTO",
+      "PHOTO",
+      "CONTENT",
+      "HEADING",
+      "CONTENT",
+      "PHOTO",
+      "CONTENT",
+      "CONTENT"
+    ],
     "title": "tnz.ID",
     "subtitle": "Spotify powered web app. Get the BPM, key and more of whatever song you want (as long as it's in Spotify)",
     "tech": ["react.js", "saas", "spotify API"],
@@ -8,11 +26,12 @@
       "Let's create some assets!",
       "With everything ready, it's time to jump into Figma..."
     ],
-    "content": [
+    "paragraphs": [
       "Well, some people do, I certainly do. If you like music and understand a little bit about it this is going to be super useful. In my case, as a DJ I'm constantly looking at this stuff, and I've been using Tunebat most of the time. It's a website also powered by the Spotify API (SAPI) and it does the job just fine. But I hate it, I don't like how it looks and I don't think they plan on updating it anytime soon. So I decided to take action and build my own solution to the gathering of metadata, in a stylish and fresh way.",
       "So my adventure begun. I've had this project on my mind for quite some time and there are a lot of things I want to add to it, but I won't spoiler things that are not even close to the oven, just what has already been cooked. So right now you can connect your Spotify account and see all your playlists and what's inside them. Use the search bar to search on Spotify whatever you want and access to the information about each album and track. If you search for an artist it's going to take you to their respective Spotify profile. And lastly you can see what I've curated throughout the week, the tracks that I've found the most fun, creative, groovy, right on the home page. I also talk a little bit about them. This is my little baby and I'm excited to see it grow and get more complex.",
       "The most fun part of starting a project, at least for me. Textures, fonts, colors, backgrounds, sizes... ahhh so many things right? Heck yeah. So I opened up Photoshop and got to work. Creating the texutres for the backgrounds was possible thanks to pinterest and a lot of distortions and blurs. I decided to go with red, green, and black as my color palette for the website. I feel it conveys really well what I want to express, it feels powerful and dark, and I'm a techno DJ so it makes sense why it looks like that. The texture consists of a picture of a mixer with some cables connected to it, I applied a couple of filters and played with the curves to make it a little distorted, and then I gave it a radial blur to create some movement. On top of it there's some texture that I got from Pinterest (yeah I know, super professional right?) and blended it with what I already had. So those black spots are that second texture also distorted. I think it turned out great, love it.",
       "Thanks for existing Google Fonts, I also love you. Since I met Alfa Slab One I've using it a lot... a lot lot. It looks amazing, it's fun and eye-catching. Of course I can't write everything with that font so I also needed a chill typeface for the body text. Maybe I went too bland tbh but I felt that Libre Franklin was a good choice, easy to read and with a good amount of variations.",
+      "I don't think you can go wrong with complimentary colors, so red felt like an obvious choice since Spotify is mostly green, and black.",
       "I approached this mobile first, since it's 2023 and everybody uses their phone to check the web. Specially with this webpage. Let's say you are listening to a great new song on Spotify on your phone and you want to check how fast it is, are you going to grab your laptop for that? What if you don't have it with you or you don't have one? So mobile first it is.",
       "I won't lie, the layout changed a little bit as I started writing the HTML for the components, and moving from a mobile to a desktop size. Still happy with the result, it's not even far away from the original idea and design and I feel I tackled the responsiveness problem effectively. It works and it looks cool! What else do you need?",
       "So this was my starting point, I always like having a basic sketch of the idea that is not completely finished. I like adding stuff as I'm coding; in this case I did the result pages on the fly, what happens when you click on a playlist, track, album. They all share pretty much the same layout, the main difference is between a single track and a collection of them, like a playlist or album. In the first one you can see the metadata while on the latter you can see the content, description, and some other data of the collection. You can access the data from each track that's it's contained and loop through them."

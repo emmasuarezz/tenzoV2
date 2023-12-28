@@ -3,11 +3,16 @@ import { Navbar, Footer } from "../Components";
 import { useState } from "react";
 import tenzoId from "../assets/JSON/tenzoId.json";
 import tenzoTech from "../assets/JSON/tenzoTech.json";
+import tenzoTechIMG from "../assets/static/projectIMG/tenzoID/ImageArray";
 import "../styles/CSS/ProjectDetail.css";
 
 const projectMap = {
   ID: tenzoId,
   tech: tenzoTech,
+};
+const imageMap = {
+  ID: tenzoTechIMG,
+  tech: tenzoTechIMG,
 };
 
 function ProjectDetail() {
@@ -15,10 +20,11 @@ function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
 
   const project = projectMap[id as "ID" | "tech"];
+  const images = imageMap[id as "ID" | "tech"];
   const design = project[0];
-  const tech = design.tech;
-  const techStack = tech!.map((t, index) => {
-    return index < tech!.length - 1 ? (
+  const dev = project[1];
+  const techStack = design.tech!.map((t, index) => {
+    return index < design.tech!.length - 1 ? (
       <>
         {t}
         <span> ~ </span>
@@ -28,25 +34,30 @@ function ProjectDetail() {
     );
   });
 
-  const designPage = (
-    <>
-      <h3>{design.headings[0]}</h3>
-      <p>{design.content[0]}</p>
-      <p>{design.content[1]}</p>
-      <h3>{design.headings[1]}</h3>
-      <p>{design.content[2]}</p>
-      <p>{design.content[3]}</p>
-      <h3>{design.headings[2]}</h3>
-      <p>{design.content[4]}</p>
-      <p>{design.content[5]}</p>
-      <p>{design.content[6]}</p>
-    </>
-  );
-  const devPage = (
-    <>
-      <h1>Development</h1>
-    </>
-  );
+  let headingIndex = 0;
+  let paragraphIndex = 0;
+  let imageIndex = 0;
+
+  const headings = page === "design" ? design.headings : dev.headings;
+  const content = page === "design" ? design.content : dev.content;
+  const paragraphs = page === "design" ? design.paragraphs : dev.paragraphs;
+
+  const pageContent = content.map((order) => {
+    switch (order) {
+      case "HEADING": {
+        headingIndex++;
+        return <h3>{headings[headingIndex - 1]}</h3>;
+      }
+      case "CONTENT": {
+        paragraphIndex++;
+        return <p>{paragraphs![paragraphIndex - 1]}</p>;
+      }
+      case "PHOTO": {
+        imageIndex++;
+        return <img src={images[imageIndex - 1]} alt="project" />;
+      }
+    }
+  });
 
   return (
     <>
@@ -75,9 +86,7 @@ function ProjectDetail() {
           development
         </span>
       </div>
-      <section className="content">
-        {page === "design" ? designPage : devPage}
-      </section>
+      <section className="content">{pageContent}</section>
       <Footer />
     </>
   );
