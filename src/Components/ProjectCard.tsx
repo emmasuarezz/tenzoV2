@@ -23,7 +23,7 @@ function ProjectCard({ id, title, description, tech, link }: ProjectCardProps) {
   const url = "/project/" + link;
 
   return (
-    <Link to={url}>
+    <Link key={link} to={url}>
       <div className="card-wrapper">
         <div className="card-header">
           <h3>

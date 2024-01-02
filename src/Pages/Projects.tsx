@@ -15,7 +15,7 @@ function Projects() {
         <section>
           {projectsEntries.map((project) => (
             <ProjectCard
-              key={project.id}
+              key={project.link}
               id={project.id}
               title={project.title}
               description={project.description}

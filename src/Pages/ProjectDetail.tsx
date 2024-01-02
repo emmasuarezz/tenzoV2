@@ -34,30 +34,61 @@ function ProjectDetail() {
     );
   });
 
-  let headingIndex = 0;
-  let paragraphIndex = 0;
-  let imageIndex = 0;
-
   const headings = page === "design" ? design.headings : dev.headings;
   const content = page === "design" ? design.content : dev.content;
   const paragraphs = page === "design" ? design.paragraphs : dev.paragraphs;
+  const img = page === "design" ? images[0] : images[1];
 
-  const pageContent = content.map((order) => {
+  let headingIndex = 0;
+  let paragraphIndex = 0;
+  let imageIndex = 0;
+  let pageContent = [];
+
+  for (let index = 0; index < content.length; index++) {
+    let order = content[index];
     switch (order) {
       case "HEADING": {
         headingIndex++;
-        return <h3>{headings[headingIndex - 1]}</h3>;
+        pageContent.push(
+          <h3 key={order + headingIndex}>{headings[headingIndex - 1]}</h3>
+        );
+        break;
       }
       case "CONTENT": {
         paragraphIndex++;
-        return <p>{paragraphs![paragraphIndex - 1]}</p>;
+        pageContent.push(
+          <p key={order + paragraphIndex}>{paragraphs![paragraphIndex - 1]}</p>
+        );
+        break;
       }
       case "PHOTO": {
         imageIndex++;
-        return <img src={images[imageIndex - 1]} alt="project" />;
+        let images = [
+          <img
+            key={order + imageIndex}
+            src={img[imageIndex - 1]}
+            alt={"projectImg" + (imageIndex - 1)}
+          />,
+        ];
+
+        // Check if the next order(s) is also "PHOTO" and add the image(s) to the array.
+        while (content[index + 1] === "PHOTO") {
+          index++;
+          imageIndex++;
+          images.push(
+            <img
+              key={order + imageIndex}
+              src={img[imageIndex - 1]}
+              alt={"projectImg" + imageIndex}
+            />
+          );
+        }
+
+        pageContent.push(<div className="img-wrapper">{images}</div>);
+        break;
       }
     }
-  });
+  }
 
   return (
     <>
