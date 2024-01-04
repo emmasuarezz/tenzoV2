@@ -29,6 +29,11 @@
 .header-wrapper h4 span {
   color: #28f060;
 }
+@media screen and (max-width: 500px) {
+  .header-wrapper h4 {
+    font-size: 1.1rem;
+  }
+}
 
 .selector {
   font-size: 1.5rem;

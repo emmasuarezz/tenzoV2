@@ -61,13 +61,13 @@ function Navbar({ color }: NavbarType) {
             </Link>
           </li>
           <li>
-            <a
+            <Link
               id="about"
-              href="#"
+              to={"/about"}
               className={active == "about" ? "active" : "not-active"}
             >
               about me
-            </a>
+            </Link>
           </li>
           <li>
             <Link

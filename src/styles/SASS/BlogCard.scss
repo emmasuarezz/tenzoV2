@@ -5,7 +5,7 @@
   display: flex;
   margin-top: 44px;
   align-items: center;
-  background-color: map-get(vars.$colors, "green");
+  background-color: map-get(vars.$colors, "orange");
   max-width: 1260px;
   min-height: 330px;
   width: 100%;
@@ -15,7 +15,7 @@
   &-img {
     max-width: 300px;
 
-    background-color: map-get(vars.$colors, "dGreen");
+    background-color: map-get(vars.$colors, "dOrange");
     border-radius: 20px;
     margin-right: 20px;
     overflow: hidden;
@@ -38,7 +38,7 @@
       font-family: vars.$ff-teko;
       line-height: 1.1;
       padding: 10px;
-      background-color: map-get(vars.$colors, "dGreen");
+      background-color: map-get(vars.$colors, "dOrange");
       font-size: 3rem;
       border-radius: 10px;
       text-align: center;
@@ -69,8 +69,10 @@
 
     .date {
       font-weight: 300;
+      font-style: italic;
       font-size: 1.1rem;
       margin-top: 22px;
+      color: map-get(vars.$colors, "grey");
     }
   }
 

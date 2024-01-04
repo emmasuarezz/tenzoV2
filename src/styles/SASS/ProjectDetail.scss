@@ -31,6 +31,10 @@
       span {
         color: map-get(vars.$colors, "green");
       }
+
+      @media screen and (max-width: 500px) {
+        font-size: 1.1rem;
+      }
     }
   }
 }
@@ -94,6 +98,9 @@
     color: #f9e2b7;
     color: whit;
     opacity: 0.8;
+    // @media screen and (max-width: 600px) {
+    //   text-align: center;
+    // }
   }
 
   img {

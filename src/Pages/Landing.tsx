@@ -32,7 +32,7 @@ function Landing() {
               Here you can see all my projects, get to know me a little bit and
               get in contact. Hope you like it all.
             </p>
-            <div className="flex-100-between mt-17 p-12">
+            <div className="flex-100-between mt-17">
               <Link to="/projects" className="hero-button">
                 projects
               </Link>

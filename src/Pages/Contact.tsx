@@ -18,18 +18,29 @@ function Contact() {
         </h2>
 
         <section className="socials-wrapper">
-          <div className="social">
-            <h3>LinkedIn</h3>
-          </div>
-          <div className="social">
-            <h3>Github</h3>
-          </div>
-          <div className="social">
-            <h3>Behance</h3>
-          </div>
-          <div className="social">
-            <h3>Email</h3>
-          </div>
+          <a
+            href="https://www.linkedin.com/in/emmanuelsuarezt/"
+            target="_blank"
+          >
+            <div className="social">
+              <h3>LinkedIn</h3>
+            </div>
+          </a>
+          <a href="https://github.com/emmasuarezz" target="_blank">
+            <div className="social">
+              <h3>Github</h3>
+            </div>
+          </a>
+          <a href="https://www.behance.net/emmasuarezz" target="_blank">
+            <div className="social">
+              <h3>Behance</h3>
+            </div>
+          </a>
+          <a href="mailto:tenzocodes@gmail.com">
+            <div className="social">
+              <h3>Email</h3>
+            </div>
+          </a>
         </section>
         <h3 className="cv">
           <a href={cv} download="CV_EmmanuelSuarez_TenzoTech.pdf">

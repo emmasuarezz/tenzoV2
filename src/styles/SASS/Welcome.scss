@@ -11,7 +11,9 @@
   align-items: center;
   justify-content: center;
   background-image: url(../../assets/welcomeBg.png);
-  background-size: cover;
+  background-size: cover; // or use "100% 100%" to stretch the image
+  background-repeat: no-repeat;
+  background-position: center;
 
   h1 {
     color: map-get(vars.$colors, "dOrange");
@@ -76,7 +78,8 @@
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
       transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
-      &:hover {
+      &:hover,
+      &:focus {
         transform: scale(1.15);
         background-color: map-get(vars.$colors, "orange");
       }

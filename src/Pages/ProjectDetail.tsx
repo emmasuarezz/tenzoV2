@@ -117,7 +117,7 @@ function ProjectDetail() {
           development
         </span>
       </div>
-      <section className="content">{pageContent}</section>
+      <main className="content">{pageContent}</main>
       <Footer />
     </>
   );
