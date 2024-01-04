@@ -59,7 +59,9 @@ function Landing() {
                 </a>
               </div>
               <div className="ball-wrapper">
-                <img className="ball-image" src={Behance} alt="" />
+                <a href="https://www.behance.net/emmasuarezz" target="_blank">
+                  <img className="ball-image" src={Behance} alt="" />
+                </a>
               </div>
             </div>
           </section>

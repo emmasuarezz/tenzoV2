@@ -1,0 +1,102 @@
+@use "sass:map";
+@use "vars";
+.avatar-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 325px;
+  margin-bottom: 295px;
+  padding-inline: 100px;
+
+  .avatar,
+  .avatar-design {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .avatar {
+    z-index: 2;
+    max-width: 300px;
+    border-radius: 100%;
+    width: 100%;
+  }
+
+  .avatar-design {
+    z-index: 1;
+  }
+}
+
+.bio {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin: 1rem;
+    font-size: 4rem;
+    color: map-get(vars.$colors, "green");
+  }
+  p {
+    color: white;
+    padding: 1rem;
+    padding-inline: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 3rem;
+    &:first-of-type {
+      color: map-get(vars.$colors, "orange");
+    }
+    &:nth-child(2) {
+      color: map-get(vars.$colors, "green");
+    }
+    &:last-of-type {
+      font-size: 2rem;
+      font-weight: 400;
+      color: white;
+    }
+  }
+}
+
+.about-card {
+  padding-inline: 2rem;
+  margin-bottom: 2rem;
+  &-container {
+    h2 {
+      font-weight: 500;
+      font-size: 2rem;
+      &:first-of-type {
+        color: map-get(vars.$colors, "orange");
+      }
+      &:nth-child(2) {
+        color: map-get(vars.$colors, "green");
+      }
+      &:last-of-type {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: white;
+      }
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+    }
+    span {
+      color: map-get(vars.$colors, "orange");
+    }
+    p {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+  }
+}

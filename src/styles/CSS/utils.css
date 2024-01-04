@@ -69,4 +69,8 @@
   font-weight: 700;
 }
 
+.column {
+  flex-direction: column;
+}
+
 /*# sourceMappingURL=utils.css.map */
