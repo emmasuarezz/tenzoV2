@@ -1,0 +1,3 @@
+[submodule "star"]
+	path = star
+	url = https://github.com/emmasuarezz/tenzo.star.git
