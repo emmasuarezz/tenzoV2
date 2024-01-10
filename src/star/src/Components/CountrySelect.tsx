@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 type Country = string;
 
 const mapCountries = (array: any) => {
-  const mappedArray = array.map((country) => country.name.common);
+  const mappedArray = array.map((country: any) => country.name.common);
   const sortedArray = mappedArray.sort();
   return sortedArray;
 };
