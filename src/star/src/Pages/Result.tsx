@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { PlanetsDisplay, TopBar } from "../Components";
-import "../styles/CSS/result.css";
+import "../styles/CSS/Result.css";
 
 function mapPlanets(astroData: any) {
   let newPlanets: any = {};
