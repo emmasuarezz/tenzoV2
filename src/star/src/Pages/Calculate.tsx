@@ -49,7 +49,7 @@ function Calculate() {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "X-RapidAPI-Key": "70f2bb8d42msh86b35049e0f911ep179dd0jsnc6af5f1cd898",
+        "X-RapidAPI-Key": "96ba1dae26msha984c51b32798c6p19c4b3jsne35e232be73d",
         "X-RapidAPI-Host": "astrologer.p.rapidapi.com",
       },
       body: JSON.stringify({
