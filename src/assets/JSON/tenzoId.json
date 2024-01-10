@@ -44,12 +44,14 @@
   {
     "headings": [
       "A good excuse to get it done",
+      "I'm still writing this hehe...",
       "Let's define what we need",
       "Let's talk about React"
     ],
-    "content": [
+    "paragraphs": [
       "This project was the culmination of the bootcamp I was in for 3 months to get to know React a bit better. We were asked to make a website that fetches data from some API and display it in some way using all the concepts we learned along the way. It was my first time doing something like this and I learned a lot while having fun. We were the first generation of that bootcamp and we left the bar pretty high for those that'll come next, and the mentors were great!",
       "States, contexts, hooks, components, layouts, fetching, auth... Huh, so we need a lot of stuff."
-    ]
+    ],
+    "content": ["HEADING", "CONTENT", "CONTENT", "HEADING"]
   }
 ]

@@ -9,6 +9,17 @@
   font-size: 2rem;
   color: #e0b644;
 }
+.topBar-title-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+}
+.topBar-title-container .tech {
+  font-size: 1.2rem;
+  color: #f38d42;
+  margin-bottom: 1.2rem;
+}
 
 .flexCol {
   width: 41%;

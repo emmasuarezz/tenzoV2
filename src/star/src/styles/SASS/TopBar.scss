@@ -10,6 +10,19 @@
   height: 15%;
   font-size: 2rem;
   color: map.get(vars.$colors, "yellow");
+
+  &-title-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+
+    .tech {
+      font-size: 1.2rem;
+      color: map.get(vars.$colors, "orange");
+      margin-bottom: 1.2rem;
+    }
+  }
 }
 
 .flexCol {
