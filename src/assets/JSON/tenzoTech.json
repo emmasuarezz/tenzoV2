@@ -4,7 +4,8 @@
     "subtitle": "My personal website and portfolio, you are experiencing V2 right now!",
     "tech": ["react.js", "sass"],
     "headings": [],
-    "content": []
+    "content": [],
+    "link": "/"
   },
   {
     "headings": [],

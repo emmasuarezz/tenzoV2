@@ -1,26 +1,30 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Navbar, Footer } from "../Components";
 import { useState } from "react";
 import tenzoId from "../assets/JSON/tenzoId.json";
 import tenzoTech from "../assets/JSON/tenzoTech.json";
+import tenzoStarEntry from "../assets/JSON/tenzoStar.json";
 import tenzoTechIMG from "../assets/static/projectIMG/tenzoID/ImageArray";
+import "../styles/CSS/utils.css";
 import "../styles/CSS/ProjectDetail.css";
 
 const projectMap = {
   ID: tenzoId,
   tech: tenzoTech,
+  star: tenzoStarEntry,
 };
 const imageMap = {
   ID: tenzoTechIMG,
   tech: tenzoTechIMG,
+  star: tenzoTechIMG,
 };
 
 function ProjectDetail() {
   const [page, setPage] = useState("design");
   const { id } = useParams<{ id: string }>();
 
-  const project = projectMap[id as "ID" | "tech"];
-  const images = imageMap[id as "ID" | "tech"];
+  const project = projectMap[id as "ID" | "tech" | "star"];
+  const images = imageMap[id as "ID" | "tech" | "star"];
   const design = project[0];
   const dev = project[1];
   const techStack = design.tech!.map((t, index) => {
@@ -96,7 +100,10 @@ function ProjectDetail() {
       <div className="header-wrapper">
         <h1>{design.title}</h1>
         <h2>{design.subtitle}</h2>
-        <h4>{techStack}</h4>
+        <h4 className="text-center">{techStack}</h4>
+        <Link className="link-project" to={design.link as string}>
+          Check it out!
+        </Link>
       </div>
       <div className="selector">
         <span

@@ -1,0 +1,54 @@
+@use "fonts";
+@use "vars";
+@use "sass:map";
+
+.topBar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 15%;
+  font-size: 2rem;
+  color: map.get(vars.$colors, "yellow");
+}
+
+.flexCol {
+  width: 41%;
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 30px;
+}
+
+.row {
+  &-left {
+    width: 100%;
+    height: 15px;
+    background-color: map.get(vars.$colors, "mush");
+
+    border-radius: 0px 0px 30px 0px;
+    border: dashed 3px;
+    border-color: map.get(vars.$colors, "lightGreen");
+  }
+  &-left:nth-child(2) {
+    margin-top: 10px;
+    border-radius: 0px 30px 0px 0px;
+  }
+
+  &-right {
+    width: 100%;
+    height: 15px;
+    background-color: map.get(vars.$colors, "mush");
+    justify-self: flex-end;
+    border-radius: 0px 0px 0px 30px;
+    border: dashed 3px;
+    border-color: map.get(vars.$colors, "lightGreen");
+  }
+  &-right:nth-child(2) {
+    margin-top: 10px;
+    border-radius: 30px 0px 0px 0px;
+  }
+}
+.title {
+  font-family: fonts.$ff-patua;
+}

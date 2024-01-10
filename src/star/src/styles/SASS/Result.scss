@@ -1,0 +1,133 @@
+@use "vars";
+@use "fonts";
+@use "sass:map";
+
+.result {
+  &-container {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    background-image: vars.$bg-image;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    align-items: center;
+
+    &-scroll {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      overflow-y: scroll;
+      flex-direction: column;
+      background-image: vars.$bg-image;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: repeat;
+    }
+
+    @media only screen and (max-width: 950px) {
+      height: auto;
+    }
+  }
+  &-title {
+    font-size: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+    padding-inline: 1rem;
+    color: map-get(vars.$colors, "yellow");
+    font-family: fonts.$ff-patua;
+    background-color: map-get(vars.$colors, "mush");
+    text-align: center;
+
+    span {
+      font-size: 2.5rem;
+      color: map-get(vars.$colors, "orange");
+      @media only screen and (max-width: 950px) {
+        font-size: 2rem;
+      }
+    }
+
+    @media only screen and (max-width: 950px) {
+      font-size: 1.5rem;
+    }
+  }
+  &-subtitle {
+    color: white;
+    font-family: fonts.$ff-palanquin;
+    font-weight: 400;
+    font-size: 2.5rem;
+  }
+}
+
+.planets {
+  &-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-grid {
+    margin-block: 2.5rem;
+    display: grid;
+    min-width: 440px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+      margin-inline: 0;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.planet {
+  background-color: map-get(vars.$colors, "yellow");
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 440px;
+  height: 120px;
+  color: map-get(vars.$colors, "mush");
+  font-family: fonts.$ff-palanquin;
+  font-size: 1.75rem;
+  border-radius: 10px;
+  border: 3px solid;
+  border-color: map-get(vars.$colors, "mush");
+  img {
+    filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(2459%)
+      hue-rotate(85deg) brightness(112%) contrast(90%);
+    width: 100px;
+  }
+
+  &:nth-child(3),
+  &:nth-child(4),
+  &:nth-child(7),
+  &:nth-child(8) {
+    background-color: map-get(vars.$colors, "mush");
+    border: 3px solid;
+    border-color: map-get(vars.$colors, "yellow");
+    color: map-get(vars.$colors, "yellow");
+
+    img {
+      filter: brightness(0) saturate(100%) invert(70%) sepia(91%) saturate(333%)
+        hue-rotate(357deg) brightness(93%) contrast(89%);
+    }
+  }
+
+  &:nth-child(11),
+  &:nth-child(12) {
+    background-color: map-get(vars.$colors, "green");
+    border: 3px solid;
+    border-color: map-get(vars.$colors, "yellow");
+    color: map-get(vars.$colors, "yellow");
+    img {
+      filter: brightness(0) saturate(100%) invert(70%) sepia(91%) saturate(333%)
+        hue-rotate(357deg) brightness(93%) contrast(89%);
+    }
+  }
+}

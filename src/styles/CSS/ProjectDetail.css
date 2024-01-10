@@ -123,4 +123,11 @@
   }
 }
 
+.link-project:hover {
+  cursor: pointer;
+  color: #ec1c24;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=ProjectDetail.css.map */

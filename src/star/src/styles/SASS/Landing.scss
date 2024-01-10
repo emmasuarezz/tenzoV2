@@ -1,0 +1,99 @@
+@use "fonts";
+@use "vars";
+@use "sass:map";
+
+.containerVh {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background-image: vars.$bg-image;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+
+  &-scroll {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    background-image: vars.$bg-image;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+  }
+
+  @media only screen and (max-width: 950px) {
+    height: auto;
+  }
+}
+
+.text-hero {
+  font-family: fonts.$ff-palanquin;
+  font-weight: 400;
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  line-height: 1.1;
+
+  span {
+    font-size: 4.5rem;
+
+    span {
+      font-weight: 700;
+      color: map.get(vars.$colors, "yellow");
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: map.get(vars.$colors, "mush");
+    }
+  }
+}
+
+.cta-button {
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: fonts.$ff-patua;
+  font-size: 1.5rem;
+  color: map.get(vars.$colors, "yellow");
+  background-color: map.get(vars.$colors, "mush");
+  border-radius: 5px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: map.get(vars.$colors, "yellow");
+    color: map.get(vars.$colors, "mush");
+  }
+
+  @media only screen and (max-width: 950px) {
+    margin-bottom: 2rem;
+  }
+}
+.section-now {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  .now-title {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    width: 100%;
+    background-color: map-get(vars.$colors, "alpha-yellow");
+  }
+
+  .big-card {
+    width: 400px;
+    height: 400px;
+    margin: 1.5rem;
+    margin-top: 0;
+    background-color: wheat;
+    border-radius: 20px;
+  }
+}

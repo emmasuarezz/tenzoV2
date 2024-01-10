@@ -1,0 +1,190 @@
+@import url(https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Patua+One&display=swap);
+.form-title {
+  width: 100%;
+  padding-inline: 1rem;
+  text-align: center;
+  font-family: "Patua One", cursive;
+  color: white;
+}
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+.form-border {
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid #e0b644;
+  border-radius: 5px;
+  padding: 2rem;
+}
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.form-group label {
+  color: #e0b644;
+  background-color: #307a6b;
+  border-radius: 5px;
+  width: fit-content;
+  padding-inline: 1rem;
+}
+@media only screen and (max-width: 950px) {
+  .form-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-group label {
+    align-self: center;
+  }
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  padding: 1rem;
+  font-family: "Palanquin Dark", sans-serif;
+  font-size: 1.2rem;
+  color: #307a6b;
+  background-color: #e0b644;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.input-group {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.input-group-time {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.input:focus {
+  outline: none;
+  background-color: #307a6b;
+  color: #e0b644;
+}
+.input-date {
+  min-width: fit-content;
+  text-align: center;
+  padding: 0px;
+  padding-inline: 20px;
+}
+.input-time-select {
+  padding: 0px;
+  padding-left: 10px;
+  font-size: 16px;
+  min-width: 25px;
+}
+.input-select {
+  min-width: 300px;
+}
+@media only screen and (max-width: 950px) {
+  .input {
+    width: 100%;
+  }
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.send-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  width: 250px;
+  height: 65px;
+  margin-top: 2rem;
+  font-family: "Patua One", cursive;
+  font-size: 1.5rem;
+  color: #e0b644;
+  background-color: #307a6b;
+  border-radius: 5px;
+  border-color: transparent;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.send-button:hover {
+  background-color: #e0b644;
+  color: #307a6b;
+}
+.send-button:active {
+  transform: scale(0.95);
+  background-color: #cba437;
+}
+
+input,
+select {
+  max-width: 300px;
+  min-width: 300px;
+}
+
+#country,
+#city,
+#pronouns {
+  padding-block: 0;
+}
+
+.error-select {
+  background-color: #e04444;
+  color: #e0b644;
+}
+.error-select:focus {
+  background-color: #e04444;
+}
+.error-message {
+  text-align: center;
+  max-width: 300px;
+  font-family: "Patua One", cursive;
+  color: #e04444;
+  font-weight: 300;
+  padding-inline: 1rem;
+  background-color: #e0b644;
+}
+@media screen and (max-width: 950px) {
+  .error-message {
+    font-size: 0.85rem;
+  }
+}
+
+.loading-message {
+  font-family: "Patua One", cursive;
+  font-size: 0.85rem;
+  color: #e0b644;
+  font-weight: 300;
+  padding-inline: 1rem;
+  background-color: #307a6b;
+  align-self: center;
+}
+.loading-input {
+  background-color: #e0b644;
+  color: #e0b644;
+}
+
+/*# sourceMappingURL=Calculate.css.map */

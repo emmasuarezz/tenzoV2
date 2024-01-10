@@ -38,7 +38,8 @@
       "I approached this mobile first, since it's 2023 and everybody uses their phone to check the web. Specially with this webpage. Let's say you are listening to a great new song on Spotify on your phone and you want to check how fast it is, are you going to grab your laptop for that? What if you don't have it with you or you don't have one? So mobile first it is.",
       "I won't lie, the layout changed a little bit as I started writing the HTML for the components, and moving from a mobile to a desktop size. Still happy with the result, it's not even far away from the original idea and design and I feel I tackled the responsiveness problem effectively. It works and it looks cool! What else do you need?",
       "So this was my starting point, I always like having a basic sketch of the idea that is not completely finished. I like adding stuff as I'm coding; in this case I did the result pages on the fly, what happens when you click on a playlist, track, album. They all share pretty much the same layout, the main difference is between a single track and a collection of them, like a playlist or album. In the first one you can see the metadata while on the latter you can see the content, description, and some other data of the collection. You can access the data from each track that's it's contained and loop through them."
-    ]
+    ],
+    "link": "/id"
   },
   {
     "headings": [

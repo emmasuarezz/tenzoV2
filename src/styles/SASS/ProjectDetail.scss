@@ -135,3 +135,12 @@
     gap: 1rem;
   }
 }
+
+.link-project {
+  &:hover {
+    cursor: pointer;
+    color: map-get(vars.$colors, "dOrange");
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}

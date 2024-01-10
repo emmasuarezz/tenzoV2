@@ -9,26 +9,34 @@ import {
   AboutMe,
 } from "./Pages";
 import "./styles/CSS/reset.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./Context/userContext";
+import TenzoStarLanding from "../src/star/src/Pages/Landing";
+import TenzoStarCalculate from "../src/star/src/Pages/Calculate";
+import TenzoStarResult from "../src/star/src/Pages/Result";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Welcome />,
-  },
-  { path: "/home", element: <Landing /> },
-  { path: "/projects", element: <Projects /> },
-  { path: "/contact", element: <Contact /> },
-  { path: "/about", element: <AboutMe /> },
-  { path: "/project/:id", element: <ProjectDetail /> },
-  { path: "/star", element: <div>Star</div> },
-]);
+const App = () => {
+  return (
+    <Router>
+      <UserProvider>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/home" element={<Landing />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="/star" element={<TenzoStarLanding />} />
+          <Route path="/star/calculate" element={<TenzoStarCalculate />} />
+          <Route path="/star/result" element={<TenzoStarResult />} />
+        </Routes>
+      </UserProvider>
+    </Router>
+  );
+};
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <UserProvider>
-      <RouterProvider router={router} />
-    </UserProvider>
+    <App />
   </React.StrictMode>
 );

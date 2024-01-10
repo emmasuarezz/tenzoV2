@@ -73,4 +73,8 @@
   flex-direction: column;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /*# sourceMappingURL=utils.css.map */

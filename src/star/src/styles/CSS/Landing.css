@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Patua+One&display=swap);
+.containerVh {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background-image: url(../../assets/background.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+}
+.containerVh-scroll {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column;
+  background-image: url(../../assets/background.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+}
+@media only screen and (max-width: 950px) {
+  .containerVh {
+    height: auto;
+  }
+}
+
+.text-hero {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  line-height: 1.1;
+}
+.text-hero span {
+  font-size: 4.5rem;
+}
+.text-hero span span {
+  font-weight: 700;
+  color: #e0b644;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #307a6b;
+}
+
+.cta-button {
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Patua One", cursive;
+  font-size: 1.5rem;
+  color: #e0b644;
+  background-color: #307a6b;
+  border-radius: 5px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.cta-button:hover {
+  background-color: #e0b644;
+  color: #307a6b;
+}
+@media only screen and (max-width: 950px) {
+  .cta-button {
+    margin-bottom: 2rem;
+  }
+}
+
+.section-now {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.section-now .now-title {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  width: 100%;
+  background-color: rgba(224, 182, 68, 0.537254902);
+}
+.section-now .big-card {
+  width: 400px;
+  height: 400px;
+  margin: 1.5rem;
+  margin-top: 0;
+  background-color: wheat;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=Landing.css.map */

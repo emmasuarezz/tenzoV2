@@ -1,0 +1,205 @@
+@use "vars";
+@use "fonts";
+@use "sass:map";
+
+.form {
+  &-title {
+    width: 100%;
+    padding-inline: 1rem;
+    text-align: center;
+    font-family: fonts.$ff-patua;
+    color: white;
+  }
+
+  &-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  &-border {
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 5px solid map.get(vars.$colors, "yellow");
+    border-radius: 5px;
+    padding: 2rem;
+  }
+
+  &-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-family: fonts.$ff-palanquin;
+    font-weight: 400;
+    font-size: 1.2rem;
+
+    label {
+      color: map.get(vars.$colors, "yellow");
+      background-color: map.get(vars.$colors, "mush");
+      border-radius: 5px;
+      width: fit-content;
+      padding-inline: 1rem;
+    }
+
+    @media only screen and (max-width: 950px) {
+      flex-direction: column;
+      align-items: center;
+
+      label {
+        align-self: center;
+      }
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  padding: 1rem;
+  font-family: fonts.$ff-palanquin;
+  font-size: 1.2rem;
+  color: map.get(vars.$colors, "mush");
+  background-color: map.get(vars.$colors, "yellow");
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+
+  &-group {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &-time {
+      width: fit-content;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    background-color: map.get(vars.$colors, "mush");
+    color: map.get(vars.$colors, "yellow");
+  }
+
+  &-date {
+    min-width: fit-content;
+    text-align: center;
+    padding: 0px;
+    padding-inline: 20px;
+  }
+  &-time-select {
+    padding: 0px;
+    padding-left: 10px;
+    font-size: 16px;
+    min-width: 25px;
+  }
+  &-select {
+    min-width: 300px;
+  }
+
+  @media only screen and (max-width: 950px) {
+    width: 100%;
+  }
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.send-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  width: 250px;
+  height: 65px;
+  margin-top: 2rem;
+  font-family: fonts.$ff-patua;
+  font-size: 1.5rem;
+  color: map.get(vars.$colors, "yellow");
+  background-color: map.get(vars.$colors, "mush");
+  border-radius: 5px;
+  border-color: transparent;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: map.get(vars.$colors, "yellow");
+    color: map.get(vars.$colors, "mush");
+  }
+  &:active {
+    transform: scale(0.95);
+    background-color: map.get(vars.$colors, "darkYellow");
+  }
+}
+
+input,
+select {
+  max-width: 300px;
+  min-width: 300px;
+}
+
+#country,
+#city,
+#pronouns {
+  padding-block: 0;
+}
+
+.error {
+  &-select {
+    background-color: map.get(vars.$colors, "red");
+    color: map.get(vars.$colors, "yellow");
+    &:focus {
+      background-color: map.get(vars.$colors, "red");
+    }
+  }
+  &-message {
+    text-align: center;
+    max-width: 300px;
+    font-family: fonts.$ff-patua;
+    color: map.get(vars.$colors, "red");
+    font-weight: 300;
+    padding-inline: 1rem;
+    background-color: map.get(vars.$colors, "yellow");
+
+    @media screen and (max-width: 950px) {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.loading {
+  &-message {
+    font-family: fonts.$ff-patua;
+    font-size: 0.85rem;
+    color: map.get(vars.$colors, "yellow");
+    font-weight: 300;
+    padding-inline: 1rem;
+    background-color: map.get(vars.$colors, "mush");
+    align-self: center;
+  }
+
+  &-input {
+    background-color: map.get(vars.$colors, "yellow");
+    color: map.get(vars.$colors, "yellow");
+  }
+}
