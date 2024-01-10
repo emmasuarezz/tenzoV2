@@ -12,7 +12,7 @@ function Contact() {
       <main className="contact-container">
         <h1>Thanks for considering me</h1>
         <h2>
-          Her you have all the ways to get in touch with me; my socials,
+          Here you have all the ways to get in touch with me; my socials,
           <br /> my email and also my resume. Hope to hear from you soon{" "}
           <span>{user}</span>!
         </h2>
