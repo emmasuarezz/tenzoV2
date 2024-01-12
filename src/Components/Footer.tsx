@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="left-ornament-bottom"></div>
       </div>
       <div className="logo">
-        <Link to={"/home"}>
+        <Link to={"/"}>
           <img src={logo} alt="" />
         </Link>
         <p>

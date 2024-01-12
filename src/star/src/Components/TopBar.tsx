@@ -13,7 +13,7 @@ function TopBar() {
           <Link to={"/star"}>
             <h1 className="title center">tenzo.star</h1>
           </Link>
-          <Link to={"/home"}>
+          <Link to={"/"}>
             <h1 className="title tech">back to tenzo.tech</h1>
           </Link>
         </div>

@@ -46,7 +46,7 @@ function Navbar({ color }: NavbarType) {
 
   const navSecondary = (
     <header className={navSecondaryClass}>
-      <Link to="/home" className="logo">
+      <Link to="/" className="logo">
         <img src={logo} alt="" />
       </Link>
       <nav>
