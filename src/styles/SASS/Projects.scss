@@ -24,4 +24,8 @@
     text-align: center;
     font-size: 1.1rem;
   }
+
+  @media screen and (max-width: 1245px) {
+    padding-inline: 30px;
+  }
 }
