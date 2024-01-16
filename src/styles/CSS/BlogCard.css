@@ -10,8 +10,8 @@
   border-radius: 20px;
   padding: 20px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  animation: fade-in linear forwards;
-  animation-timeline: view(700px 0px);
+  animation: fade-in cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+  animation-timeline: view(300px 0px);
 }
 .blog-card-img {
   max-width: 300px;

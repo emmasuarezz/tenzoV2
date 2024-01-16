@@ -187,6 +187,32 @@ main > div {
   align-self: flex-start;
   text-align: center;
 }
+.blog-button {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
+  height: 88px;
+  background-color: #0d0d0e;
+  transition: background-color 0.6s ease-in-out;
+  color: #28f060;
+  font-size: 1.7rem;
+  font-weight: 300;
+  border: 2px solid;
+  border-color: #28f060;
+  border-radius: 22px;
+  transition: transform 0.2s ease-in-out;
+}
+.blog-button:hover {
+  cursor: pointer;
+  border: 3px dashed;
+  border-color: #25c050;
+  color: #25c050;
+  font-weight: 400;
+  transform: scale(1.05);
+  transition: background-color 0.3s ease-in-out;
+  transition: font-weight 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
 
 @keyframes loopPattern {
   from {

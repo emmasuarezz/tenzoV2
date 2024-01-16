@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../Context/userContext";
 
@@ -14,6 +14,17 @@ import Separator from "../assets/gradient separator.svg";
 import blogEntries from "../assets/JSON/blog.json";
 
 function Landing() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const entriesPerPage = 2;
+
+  const indexOfLastEntry = currentPage * entriesPerPage;
+  const currentEntries =
+    indexOfLastEntry < blogEntries.length
+      ? blogEntries.slice(0, indexOfLastEntry)
+      : blogEntries;
+
+  const showButton = indexOfLastEntry < blogEntries.length;
+
   const { user } = useContext(UserContext);
   return (
     <>
@@ -73,7 +84,7 @@ function Landing() {
         </section>
         <section className="blog-section">
           <h2 className="blog-title">What I've been up to lately...</h2>
-          {blogEntries.map((entry) => {
+          {currentEntries.map((entry) => {
             return (
               <BlogCard
                 title={entry.title}
@@ -85,6 +96,14 @@ function Landing() {
               />
             );
           })}
+          {showButton && (
+            <button
+              className="blog-button"
+              onClick={() => setCurrentPage(currentPage + 1)}
+            >
+              Load more
+            </button>
+          )}
         </section>
       </main>
       <Footer />
