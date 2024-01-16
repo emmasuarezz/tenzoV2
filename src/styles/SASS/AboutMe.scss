@@ -100,4 +100,8 @@
       font-weight: 300;
     }
   }
+
+  &:first-of-type {
+    margin-top: 4rem;
+  }
 }

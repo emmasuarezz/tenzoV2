@@ -29,7 +29,7 @@
 }
 @media screen and (max-width: 900px) {
   .about-text {
-    padding: 11px;
+    padding: 10px;
   }
 }
 .about-photo {
@@ -37,10 +37,31 @@
   border-radius: 22px;
   min-width: 300px;
 }
+@media screen and (max-width: 1245px) {
+  .about-photo {
+    min-width: 0;
+  }
+}
 
 .photo-container {
+  width: 30%;
   padding: 15px;
   background-color: #1c1b1e;
+  display: flex;
+}
+@media screen and (max-width: 1245px) {
+  .photo-container {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .photo-container {
+    width: 100%;
+  }
+}
+.photo-container img {
+  width: 100%;
+  border-radius: 22px;
 }
 
 /*# sourceMappingURL=About.css.map */

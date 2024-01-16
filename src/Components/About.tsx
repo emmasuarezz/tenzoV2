@@ -5,7 +5,7 @@ import aboutPhoto from "../assets/about-photo.png";
 function About() {
   return (
     <>
-      <div className="w-70 h-full about-text">
+      <div className=" h-full about-text">
         <p>
           My name is Emmanuel Suárez. I am currently pursuing an{" "}
           <span className="accent-green">Electrical Engineering</span> degree at
@@ -17,7 +17,7 @@ function About() {
           thinking about <span className="accent-green">solutions</span>.
         </p>
       </div>
-      <div className="w-30 photo-container">
+      <div className=" photo-container">
         <img className="about-photo" src={aboutPhoto} alt="" />
       </div>
     </>
