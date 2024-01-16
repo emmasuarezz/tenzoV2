@@ -12,12 +12,18 @@
   font-size: 2.7rem;
   line-height: 1.2;
 }
+@media screen and (max-width: 900px) {
+  .projects-container h1 {
+    font-size: 2rem;
+  }
+}
 .projects-container h2 {
+  margin-top: 0.5rem;
   color: white;
   opacity: 0.75;
   font-weight: 400;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 /*# sourceMappingURL=Projects.css.map */

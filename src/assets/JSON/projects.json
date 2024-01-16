@@ -1,14 +1,15 @@
-[{
-    "id": "02",
+[
+  {
+    "id": "01",
     "title": "tenzo.tech",
-    "description": "Second iteration of my personal website/portfolio. Hey don't judge me, everytime I learn something new or get too bored I will update this thing. It's also a great way to experiment with different layouts and technologies. For example, I've been using Tailwind CSS to style my projects lately, and don't get me wrong, it's great, but to be honest with you guys I've been watching too much of Kevin Powell and I got inspired to write my own classes and styles.",
+    "description": "Second iteration of my personal website. Everytime I learn something new or get too bored I will update this thing.",
     "tech": ["react.js", "sass"],
     "link": "tech"
   },
   {
-    "id": "03",
+    "id": "02",
     "title": "tenzo.star",
-    "description": "This is a project I've been working on for a while now. It's a web app that allows you to get your birthchart. You enter your birthday, time and location and it will provide you with the planets and what signs they were in the moment you were born. It's still in development but I'm planning on adding a lot of features.",
+    "description": "It's a web app that allows you to see your birthchart. You enter your birthday, time of birth and location and it will tell you in what sign each planet was the moment you were born. It's still in development but I'm planning on adding a lot of features.",
     "tech": ["react.js", "sass", "a bunch of apis"],
     "link": "star"
   }
