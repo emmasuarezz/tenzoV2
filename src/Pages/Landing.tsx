@@ -15,9 +15,8 @@ import blogEntries from "../assets/JSON/blog.json";
 
 function Landing() {
   const [currentPage, setCurrentPage] = useState(1);
-  const entriesPerPage = 2;
 
-  const indexOfLastEntry = currentPage * entriesPerPage;
+  const indexOfLastEntry = currentPage;
   const currentEntries =
     indexOfLastEntry < blogEntries.length
       ? blogEntries.slice(0, indexOfLastEntry)
