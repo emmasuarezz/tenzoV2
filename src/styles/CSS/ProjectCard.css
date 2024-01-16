@@ -2,7 +2,9 @@
 .card-wrapper {
   margin-top: 60px;
   padding: 10px;
+  padding-bottom: 15px;
   border-radius: 15px;
+  transition: all 0.2s ease-in-out;
 }
 .card-wrapper:hover {
   transform: scale(1.025);

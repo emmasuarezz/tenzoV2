@@ -91,7 +91,7 @@ main > div {
   width: 50%;
   max-width: 300px;
   height: 88px;
-  background-color: #1c1b1e;
+  background-color: #0d0d0e;
   transition: background-color 0.6s ease-in-out;
   color: #f05a28;
   font-size: 1.7rem;
@@ -161,7 +161,7 @@ main > div {
   flex-direction: row;
   justify-content: center;
   flex-wrap: nowrap;
-  background-color: #17151a;
+  background-color: #181819;
 }
 @media screen and (max-width: 1245px) {
   .about-wrapper {
