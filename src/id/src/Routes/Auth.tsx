@@ -6,7 +6,6 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../firebase";
-import { set } from "firebase/database";
 
 const SignIn = ({ ...props }: any) => {
   return (
@@ -274,12 +273,7 @@ function Auth() {
   };
   const signIn = async (email: string, password: string) => {
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential.user;
+      await signInWithEmailAndPassword(auth, email, password);
       setTimeout(() => {
         setIsLoading(false);
         setSuccess(true);
