@@ -63,6 +63,12 @@
         align-self: center;
       }
     }
+
+    input,
+    select {
+      width: 100%;
+      max-width: 300px;
+    }
   }
 }
 
@@ -117,12 +123,6 @@
   }
 }
 
-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .send-button {
   display: flex;
   justify-content: center;
@@ -149,12 +149,6 @@ form {
     transform: scale(0.95);
     background-color: map.get(vars.$colors, "darkYellow");
   }
-}
-
-input,
-select {
-  width: 100%;
-  max-width: 300px;
 }
 
 #country,

@@ -29,7 +29,7 @@ function Landing() {
     <>
       <Navbar color="gradient-orange" />
       <main>
-        <div>
+        <div className="hero-div">
           <section className="hero">
             <h1>
               Welcome

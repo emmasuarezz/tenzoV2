@@ -7,6 +7,8 @@ import { UserProvider } from "./Context/userContext";
 import TenzoStarLanding from "../src/star/src/Pages/Landing";
 import TenzoStarCalculate from "../src/star/src/Pages/Calculate";
 import TenzoStarResult from "../src/star/src/Pages/Result";
+import IdAuth from "../src/id/src/Routes/Auth";
+import IdSoon from "../src/id/src/Routes/Soon";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
           <Route path="/star" element={<TenzoStarLanding />} />
           <Route path="/star/calculate" element={<TenzoStarCalculate />} />
           <Route path="/star/result" element={<TenzoStarResult />} />
+          <Route path="/id" element={<IdAuth />} />
+          <Route path="/id/coming-soon" element={<IdSoon />} />
         </Routes>
       </UserProvider>
     </Router>

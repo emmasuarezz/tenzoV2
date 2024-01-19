@@ -4,12 +4,12 @@ main {
   flex-direction: column;
   justify-content: space-between;
 }
-main > div {
+main > .hero-div {
   width: 100%;
   display: flex;
 }
 @media screen and (max-width: 1245px) {
-  main > div {
+  main > .hero-div {
     flex-direction: column;
   }
 }

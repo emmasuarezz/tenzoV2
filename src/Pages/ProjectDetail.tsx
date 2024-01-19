@@ -3,20 +3,21 @@ import { Navbar, Footer } from "../Components";
 import { useState } from "react";
 import tenzoId from "../assets/JSON/tenzoId.json";
 import tenzoTech from "../assets/JSON/tenzoTech.json";
-import tenzoStarEntry from "../assets/JSON/tenzoStar.json";
-import tenzoTechIMG from "../assets/static/projectIMG/tenzoID/ImageArray";
+import tenzoStar from "../assets/JSON/tenzoStar.json";
+import tenzoIDImg from "../assets/static/projectIMG/tenzoID/ImageArray";
+import tenzoTechImg from "../assets/static/projectIMG/tenzoTech/ImageArray";
 import "../styles/CSS/utils.css";
 import "../styles/CSS/ProjectDetail.css";
 
 const projectMap = {
   ID: tenzoId,
   tech: tenzoTech,
-  star: tenzoStarEntry,
+  star: tenzoStar,
 };
 const imageMap = {
-  ID: tenzoTechIMG,
-  tech: tenzoTechIMG,
-  star: tenzoTechIMG,
+  ID: tenzoIDImg,
+  tech: tenzoTechImg,
+  star: tenzoIDImg,
 };
 
 function ProjectDetail() {

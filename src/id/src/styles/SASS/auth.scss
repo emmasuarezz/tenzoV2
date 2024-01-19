@@ -1,0 +1,326 @@
+@use "sass:map";
+@use "vars";
+@use "fonts";
+$bg-image: url(../../assets/bg.png);
+
+.auth-container {
+  min-height: 100vh;
+  background-image: $bg-image;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  overflow-y: hidden;
+  display: flex;
+  font-family: fonts.$ff-archivo;
+
+  @media (max-width: 875px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.auth-title {
+  padding-left: 5vw;
+  padding-bottom: 10vh;
+  h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ba5622;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: #b96e3c;
+    font-weight: 900;
+  }
+
+  @media (max-width: 768px) {
+    padding-bottom: 5vh;
+    margin-top: 20px;
+  }
+}
+
+//Has a mq for mobile: width 100% For desktop: width 50%
+.w {
+  &-50 {
+    width: 50%;
+    @media (max-width: 875px) {
+      width: 100%;
+    }
+  }
+
+  &-100 {
+    width: 100%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  align-self: center;
+  max-width: 450px;
+  width: 100%;
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    max-height: 95vh;
+    overflow: hidden;
+  }
+  &-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: white;
+    font-style: italic;
+    text-decoration: underline;
+  }
+
+  .hr-with-text {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    hr {
+      flex-grow: 1;
+      border: none;
+      border-top: 1px solid white;
+    }
+
+    span {
+      padding: 0.25rem 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: white;
+      background-color: map-get(vars.$colors, "green");
+    }
+  }
+}
+
+.align {
+  &-end {
+    align-self: flex-end;
+  }
+}
+
+.sign-switch {
+  margin-top: 2rem;
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding-inline: 2rem;
+
+  span {
+    font-weight: 400;
+  }
+}
+
+.active {
+  font-weight: 700 !important;
+  opacity: 1;
+
+  text-decoration: none;
+  border-bottom: 4px solid map-get(vars.$colors, "green");
+  padding-bottom: 3px;
+  padding-inline: 5px;
+}
+.inactive {
+  opacity: 0.7;
+  font-weight: 300 !important;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+  }
+}
+.button-wrapper {
+  display: flex;
+  max-width: 250px;
+  width: 100%;
+  justify-content: center;
+
+  button {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    background-color: map-get(vars.$colors, "green");
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: white;
+      color: map-get(vars.$colors, "green");
+      transform: scale(1.025);
+      transition: all 0.2s ease-in-out;
+    }
+    &:active {
+      transform: scale(0.975);
+      background-color: map-get(vars.$colors, "green");
+      transition: all 0.2s ease-in-out;
+    }
+    &:disabled {
+      background-color: #a3a3a3;
+      color: white;
+      cursor: auto;
+      opacity: 0.5;
+
+      &:hover {
+        transform: scale(1);
+        transition: none;
+      }
+    }
+  }
+}
+
+.input-error {
+  background-color: rgba(255, 0, 0, 0.311) !important;
+
+  &-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    padding-inline: 1rem;
+    padding-block: 0.2rem;
+    background-color: map-get(vars.$colors, "green") !important;
+    align-self: flex-end;
+    margin-top: -1rem;
+    text-align: center;
+  }
+}
+
+.input-valid {
+  background-color: rgba(0, 255, 0, 0.148) !important;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #b96e3c5e;
+
+  p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 10px solid rgba(255, 255, 255, 0.2);
+    border-top: 10px solid map-get(vars.$colors, "green");
+    animation: spin 1s linear infinite;
+  }
+}
+
+.success {
+  background-color: rgba(0, 255, 0, 0.148) !important;
+  p {
+    padding: 0.5rem;
+    background-color: map-get(vars.$colors, "green");
+    color: map-get(vars.$colors, "orange");
+    text-align: center;
+  }
+
+  &-button {
+    background-color: map-get(vars.$colors, "orange");
+    color: map-get(vars.$colors, "green");
+    opacity: 0.65;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: map-get(vars.$colors, "green");
+      color: map-get(vars.$colors, "orange");
+      transform: scale(1.025);
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+    }
+    &:active {
+      transform: scale(0.975);
+      background-color: map-get(vars.$colors, "green");
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+
+.forgot-pw {
+  color: white;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+  border-radius: 10px;
+  opacity: 0.85;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: white;
+    background-color: map-get(vars.$colors, "green");
+    opacity: 1;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+  }
+}
+.credential-error {
+  color: white;
+  width: 100%;
+  margin-top: -10px;
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
+
+  span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 100%;
+    padding-block: 0.5rem;
+    border-radius: 10px;
+    opacity: 0.85;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      padding-inline: 0.5rem;
+      color: white;
+      background-color: map-get(vars.$colors, "alpha-green");
+      opacity: 1;
+      font-size: 1.1rem;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

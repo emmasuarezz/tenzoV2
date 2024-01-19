@@ -3,8 +3,12 @@
     "title": "tenzo.tech",
     "subtitle": "My personal website and portfolio, you are experiencing V2 right now!",
     "tech": ["react.js", "sass"],
-    "headings": ["under construction... it's gonna be filled soon!"],
-    "content": ["HEADING"],
+    "headings": ["Hello there!", "Let's jump into Figma"],
+    "paragraphs": [
+      "This is my personal website and portfolio, you are experiencing V2 right now! It's quite the upgrade from the previous version, which was the first thing I tried building with React. This one is also built with React.js and I chose to go with Sass, if you haven't heard from Kevin Powell try checking out his youtube channel, I'm sure you are going to end up loving Sass as well.",
+      "K"
+    ],
+    "content": ["HEADING", "CONTENT", "PHOTO", "PHOTO", "HEADING", "CONTENT"],
     "link": "/"
   },
   {

@@ -1,0 +1,47 @@
+.sign-in-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 450px;
+  width: 100%;
+  min-height: 60px;
+  background-color: white;
+  color: black;
+  border-radius: 100rem;
+  border: none;
+  padding: 0.5rem 0rem;
+  padding-right: 5rem;
+  padding-left: 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.sign-in-button img {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 20px;
+}
+.sign-in-button:hover {
+  color: #ba5622;
+  transform: scale(1.025);
+  transition: all 0.2s ease-in-out;
+}
+.sign-in-button:active {
+  transform: scale(0.975);
+  transition: all 0.2s ease-in-out;
+}
+@media (max-width: 900px) {
+  .sign-in-button {
+    max-width: 400px;
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 600px) {
+  .sign-in-button {
+    max-width: 400px;
+    font-size: 1.1rem;
+  }
+}
+
+/*# sourceMappingURL=googleButton.css.map */
