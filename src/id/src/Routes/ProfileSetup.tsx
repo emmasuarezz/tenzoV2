@@ -1,7 +1,6 @@
 import "../styles/CSS/profileSetup.css";
 import { useState, useEffect } from "react";
 import { PicturePicker, SpotifyButton } from "../Components";
-import { set } from "firebase/database";
 
 function ProfileSetup() {
   const [spotifyConnected, setSpotifyConnected] = useState<boolean>(false);
