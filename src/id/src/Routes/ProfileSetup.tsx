@@ -1,6 +1,9 @@
 import "../styles/CSS/profileSetup.css";
 import { useState, useEffect } from "react";
 import { PicturePicker, SpotifyButton } from "../Components";
+import { auth, db } from "../firebase";
+import { updateProfile } from "firebase/auth";
+import { ref, set } from "firebase/database";
 
 function ProfileSetup() {
   const [spotifyConnected, setSpotifyConnected] = useState<boolean>(false);
@@ -10,8 +13,8 @@ function ProfileSetup() {
   const [fontSize, setFontSize] = useState("3rem");
   const [picture, setPicture] = useState<string | null>(null);
   const [changePicture, setChangePicture] = useState<boolean>(false);
+  const [pronouns, setPronouns] = useState<string>("");
   const [spotifyImg, setSpotifyImg] = useState<string>("");
-
   const [user, setUser] = useState(() =>
     JSON.parse(localStorage.getItem("user") || "{}")
   );
@@ -47,7 +50,7 @@ function ProfileSetup() {
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };
-  }, []); // Empty dependency array so the hook runs only once
+  }, []);
 
   useEffect(() => {
     const set01 = document.getElementById("name-complete");
@@ -55,7 +58,7 @@ function ProfileSetup() {
     const set03 = document.getElementById("connection-complete");
     let completeText = document.getElementById("complete-text");
 
-    if (nameSize > 0 && age.length > 0) {
+    if (nameSize > 0 && age.length > 0 && pronouns.length > 0) {
       set01?.classList.add("profile-complete");
     } else {
       set01?.classList.remove("profile-complete");
@@ -71,7 +74,13 @@ function ProfileSetup() {
       set03?.classList.remove("profile-complete");
     }
 
-    if (nameSize > 0 && age.length > 0 && picture && spotifyConnected) {
+    if (
+      nameSize > 0 &&
+      age.length > 0 &&
+      picture &&
+      spotifyConnected &&
+      pronouns.length > 0
+    ) {
       document
         .querySelector(".complete-button")
         ?.classList.add("complete-button-active");
@@ -83,7 +92,7 @@ function ProfileSetup() {
         ?.classList.remove("complete-button-active");
       completeText!.innerHTML = "This is what you need to do.";
     }
-  }, [name, picture, user, age]);
+  }, [name, picture, user, age, pronouns]);
 
   const connectSpotify = () => {
     return (
@@ -144,7 +153,13 @@ function ProfileSetup() {
           <section className="secondary-input-wrapper">
             <h2 className="secondary-title">tell me your pronouns</h2>
 
-            <select name="" id="">
+            <select
+              name="pronouns"
+              id="pronouns"
+              value={pronouns}
+              onChange={(e) => setPronouns(e.target.value)}
+            >
+              <option value="">select one</option>
               <option value="he">he / him</option>
               <option value="she">she / her</option>
               <option value="they">they / them</option>
@@ -165,6 +180,27 @@ function ProfileSetup() {
       </div>
     );
   };
+
+  function handleComplete() {
+    const current = auth.currentUser;
+
+    const userDB = {
+      name: name,
+      age: age,
+      img: picture,
+      status: true,
+      pronouns: pronouns,
+    };
+
+    updateProfile(current!, { displayName: name, photoURL: picture }).then(
+      () => {
+        set(ref(db, "users/" + current!.uid), userDB).then(() => {
+          alert("Profile set up successfully!");
+          window.location.href = "/id/dash";
+        });
+      }
+    );
+  }
 
   return (
     <div className="profile-setup-container">
@@ -194,7 +230,9 @@ function ProfileSetup() {
             </ul>
           </div>
           <div className="complete-button-container">
-            <button className="complete-button">All set!</button>
+            <button className="complete-button" onClick={handleComplete}>
+              All set!
+            </button>
           </div>
         </section>
       </section>

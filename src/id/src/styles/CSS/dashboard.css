@@ -1,0 +1,42 @@
+.dash-wrapper {
+  color: white;
+  padding: 2rem;
+}
+.dash-wrapper h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.users-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.users-container .user-card {
+  max-height: 150px;
+  max-width: 400px;
+  background-color: #acc1aa;
+  border: 2px solid green;
+  border-radius: 10px;
+  display: flex;
+  padding: 0.45rem;
+}
+.users-container .user-card img {
+  max-width: 150px;
+  border-radius: 100%;
+}
+.users-container .user-card h2 {
+  width: 100%;
+  text-align: center;
+}
+.users-container .user-card .text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=dashboard.css.map */

@@ -2,7 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./reset.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Auth, ConnectionSuccess, ProfileSetup, Soon } from "./Routes";
+import {
+  Auth,
+  ConnectionSuccess,
+  Dashboard,
+  ProfileSetup,
+  Soon,
+} from "./Routes";
 import { UserContextProvider } from "./Context/spotifyContext";
 
 const router = createBrowserRouter([
@@ -10,6 +16,7 @@ const router = createBrowserRouter([
   { path: "/coming-soon", element: <Soon /> },
   { path: "/profile-setup", element: <ProfileSetup /> },
   { path: "/success-connection", element: <ConnectionSuccess /> },
+  { path: "/dash", element: <Dashboard /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
