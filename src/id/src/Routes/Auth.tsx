@@ -12,7 +12,7 @@ const SignIn = ({ ...props }: any) => {
   return (
     <>
       <p className="form-subtitle">Welcome back!</p>
-      <div className="input-wrapper">
+      <div id="email-input-wrapper" className="input-wrapper">
         <input
           id="email"
           className="id-input"
@@ -28,7 +28,7 @@ const SignIn = ({ ...props }: any) => {
       {props.emailError === "invalid" && (
         <p className="input-error-text">it must be a valid email</p>
       )}
-      <div className="input-wrapper">
+      <div id="password-input-wrapper" className="input-wrapper">
         <input
           id="password"
           className="id-input"
@@ -73,7 +73,7 @@ const SignUp = ({ ...props }: any) => {
   return (
     <>
       <p className="form-subtitle">Welcome to the fam!</p>
-      <div className="input-wrapper">
+      <div id="name-input-wrapper" className="input-wrapper">
         <input
           id="name"
           placeholder="name"
@@ -84,9 +84,9 @@ const SignUp = ({ ...props }: any) => {
         />
       </div>
       {props.nameError === "empty" && (
-        <p className="input-error-text">Your name can't be empty</p>
+        <p className="input-error-text">your name can't be empty</p>
       )}
-      <div className="input-wrapper">
+      <div id="email-signUp-input-wrapper" className="input-wrapper">
         <input
           id="email-signUp"
           className="id-input"
@@ -102,7 +102,7 @@ const SignUp = ({ ...props }: any) => {
       {props.emailError === "invalid" && (
         <p className="input-error-text">it must be a valid email</p>
       )}
-      <div className="input-wrapper">
+      <div id="password-signUp-input-wrapper" className="input-wrapper">
         <input
           id="password-signUp"
           className="id-input"
@@ -120,7 +120,7 @@ const SignUp = ({ ...props }: any) => {
           it must be at least 8 characters long
         </p>
       )}
-      <div className="input-wrapper">
+      <div id="confirm-password-input-wrapper" className="input-wrapper">
         <input
           id="confirm-password"
           className="id-input"
@@ -158,13 +158,19 @@ function Auth() {
 
   const validateForm = () => {
     //login inputs
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
+    const emailInput = document.getElementById("email-input-wrapper");
+    const passwordInput = document.getElementById("password-input-wrapper");
     //signup inputs
-    const nameInput = document.getElementById("name");
-    const emailSignUpInput = document.getElementById("email-signUp");
-    const passwordSignUpInput = document.getElementById("password-signUp");
-    const confirmPasswordInput = document.getElementById("confirm-password");
+    const nameInput = document.getElementById("name-input-wrapper");
+    const emailSignUpInput = document.getElementById(
+      "email-signUp-input-wrapper"
+    );
+    const passwordSignUpInput = document.getElementById(
+      "password-signUp-input-wrapper"
+    );
+    const confirmPasswordInput = document.getElementById(
+      "confirm-password-input-wrapper"
+    );
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -270,9 +276,10 @@ function Auth() {
       setTimeout(() => {
         setIsLoading(false);
         setSuccess(true);
+        setTimeout(() => {
+          window.location.href = "/id/coming-soon";
+        }, timeout * 2);
       }, timeout);
-
-window.location.href = "/id/coming-soon"
     } catch (error: any) {
       setIsLoading(false);
       setError(error.code);
@@ -284,9 +291,11 @@ window.location.href = "/id/coming-soon"
       setTimeout(() => {
         setIsLoading(false);
         setSuccess(true);
-      }, timeout);
 
-      window.location.href = "/id/profile-setup"
+        setTimeout(() => {
+          window.location.href = "/id/profile-setup";
+        }, timeout * 2);
+      }, timeout);
     } catch (error) {
       setIsLoading(false);
       console.log(error);

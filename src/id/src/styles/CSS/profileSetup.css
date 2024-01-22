@@ -274,6 +274,12 @@
   font-style: italic;
   margin-bottom: 0.5rem;
 }
+@media (max-width: 750px) {
+  .secondary-title {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 .g-1 {
   gap: 1.5rem;

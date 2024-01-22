@@ -70,7 +70,6 @@
   font-weight: 300;
   color: white;
   font-style: italic;
-  text-decoration: underline;
 }
 .form .hr-with-text {
   display: flex;
@@ -105,13 +104,11 @@
   color: white;
   cursor: pointer;
   padding-inline: 2rem;
+  text-align: center;
 }
-.sign-switch span {
-  font-weight: 400;
-}
-@media (max-width: 600px) {
-  .sign-switch span {
-    font-size: 1rem !important;
+@media (max-width: 450px) {
+  .sign-switch {
+    font-size: 1.5rem;
   }
 }
 
@@ -175,7 +172,7 @@
 }
 
 .input-error {
-  background-color: rgba(255, 0, 0, 0.311) !important;
+  border-color: rgba(255, 0, 0, 0.311) !important;
 }
 .input-error-text {
   font-size: 1.2rem;

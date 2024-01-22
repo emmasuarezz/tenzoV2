@@ -7,7 +7,7 @@ function Soon() {
     try {
       await signOut(auth);
       alert("You have been signed out");
-      window.location.href = "/";
+      window.location.href = "/id";
     } catch (error) {
       console.error(error);
     }

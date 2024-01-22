@@ -292,6 +292,11 @@ $bg-image: url("../../assets/bg-profile.png");
     font-weight: 300;
     font-style: italic;
     margin-bottom: 0.5rem;
+
+    @media (max-width: 750px) {
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 

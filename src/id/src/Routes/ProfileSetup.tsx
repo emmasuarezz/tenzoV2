@@ -8,7 +8,7 @@ function ProfileSetup() {
 
   const [nameSize, setNameSize] = useState<number>(0);
   const [name, setName] = useState<string>("");
-
+  const [fontSize, setFontSize] = useState("3rem");
   const [picture, setPicture] = useState<string | null>(null);
   const [changePicture, setChangePicture] = useState<boolean>(false);
 
@@ -82,6 +82,7 @@ function ProfileSetup() {
               <h2>Hello, </h2>
               <div className="name-input-wrapper">
                 <input
+                  style={{ fontSize }}
                   value={name}
                   placeholder="what's your name?"
                   type="text"
@@ -90,6 +91,11 @@ function ProfileSetup() {
                   onChange={(e) => {
                     setNameSize(e.target.value.length);
                     setName(e.target.value);
+                    if (e.target.value.length > 7) {
+                      setFontSize("2em"); // or any smaller size you want
+                    } else {
+                      setFontSize("3em"); // reset to the initial size
+                    }
                   }}
                 />
               </div>
@@ -107,19 +113,9 @@ function ProfileSetup() {
             </section>
 
             <section className="secondary-input-wrapper">
-              <h2 className="secondary-title">and what about your age?</h2>
+              <h2 className="secondary-title">and your age please</h2>
 
               <input name="age" id="age"></input>
-            </section>
-            <section className="secondary-input-wrapper">
-              <h2 className="secondary-title">
-                take a moment to read the terms and conditions please
-              </h2>
-
-              <input type="checkbox" id="terms" name="terms"></input>
-              <label className="secondary-title" htmlFor="terms">
-                I accept the terms and conditions
-              </label>
             </section>
           </div>
         </div>
