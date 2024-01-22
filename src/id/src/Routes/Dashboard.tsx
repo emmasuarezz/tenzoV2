@@ -2,7 +2,7 @@ import { db, auth } from "../firebase";
 import { get, ref, set } from "firebase/database";
 import { signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
-import "../styles/CSS/Dashboard.css";
+import "../styles/CSS/dashboard.css";
 
 function Dashboard() {
   const [activeUsers, setActiveUsers] = useState<any[]>([]);
