@@ -271,6 +271,8 @@ function Auth() {
         setIsLoading(false);
         setSuccess(true);
       }, timeout);
+
+window.location.href = "/id/coming-soon"
     } catch (error: any) {
       setIsLoading(false);
       setError(error.code);
@@ -282,16 +284,9 @@ function Auth() {
       setTimeout(() => {
         setIsLoading(false);
         setSuccess(true);
-
-        setTimeout(() => {
-        setIsLoading(false);
-        setSuccess(true);
       }, timeout);
 
-
-      }, timeout);
-
-      window.location.href = "/id/success-connection"
+      window.location.href = "/id/profile-setup"
     } catch (error) {
       setIsLoading(false);
       console.log(error);
