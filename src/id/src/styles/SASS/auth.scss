@@ -13,7 +13,7 @@ $bg-image: url(../../assets/bg.png);
   display: flex;
   font-family: fonts.$ff-archivo;
 
-  @media (max-width: 875px) {
+  @media (max-width: 768px) {
     flex-direction: column-reverse;
   }
 }
@@ -43,7 +43,7 @@ $bg-image: url(../../assets/bg.png);
 .w {
   &-50 {
     width: 50%;
-    @media (max-width: 875px) {
+    @media (max-width: 768px) {
       width: 100%;
     }
   }
@@ -65,9 +65,9 @@ $bg-image: url(../../assets/bg.png);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
-    max-height: 95vh;
-    overflow: hidden;
+    gap: 1.5rem;
+    background-color: #0000007e;
+    padding-bottom: 1rem;
   }
   &-subtitle {
     font-size: 1.5rem;
@@ -118,6 +118,9 @@ $bg-image: url(../../assets/bg.png);
 
   span {
     font-weight: 400;
+    @media (max-width: 600px) {
+      font-size: 1rem !important;
+    }
   }
 }
 
@@ -192,8 +195,8 @@ $bg-image: url(../../assets/bg.png);
     color: white;
     padding-inline: 1rem;
     padding-block: 0.2rem;
-    background-color: map-get(vars.$colors, "green") !important;
-    align-self: flex-end;
+    background-color: map-get(vars.$colors, "red") !important;
+    align-self: flex-start;
     margin-top: -1rem;
     text-align: center;
   }
@@ -300,7 +303,7 @@ $bg-image: url(../../assets/bg.png);
   span {
     font-size: 0.9rem;
     font-weight: 500;
-    width: 100%;
+
     padding-block: 0.5rem;
     border-radius: 10px;
     opacity: 0.85;

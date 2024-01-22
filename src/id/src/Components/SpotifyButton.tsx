@@ -1,10 +1,37 @@
+import { useContext } from "react";
 import spotifyLogo from "../assets/spotifyLogo.webp";
+import { requestAuth } from "../spotifyApi.ts";
+import { ApiContext } from "../Context/spotifyContext.tsx";
 
-function SpotifyButton() {
+function SpotifyButton({
+  text,
+  extraClass,
+}: {
+  text: string;
+  extraClass?: string;
+  context?: any;
+}) {
+  const { setLoading } = useContext(ApiContext);
+
+  function handleClick(e: any) {
+    e.preventDefault();
+    // setLoading(true);
+    try {
+      requestAuth(e);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
-    <button className="sign-in-button">
+    <button
+      className={`sign-in-button ${extraClass}`}
+      onClick={(e) => {
+        handleClick(e);
+      }}
+    >
       <img src={spotifyLogo} alt="" />
-      <span>Sign in with Spotify</span>
+      <span>{text}</span>
     </button>
   );
 }

@@ -1,0 +1,351 @@
+@import url(https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swapS);
+.profile-setup-container {
+  font-family: "Archivo", sans-serif;
+  min-height: 100vh;
+  position: relative;
+  background-image: url("../../assets/bg-profile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.profile-setup-container .setup-container {
+  width: 100%;
+  max-width: 800px;
+  min-height: 600px;
+  padding: 20px;
+  background-color: #1f1e1e;
+  border-radius: 10px;
+}
+
+.container-title {
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #ba5622;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.photo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.photo-wrapper .id-photo-container {
+  border-radius: 1000px;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  transition: scale 0.3s ease;
+}
+.photo-wrapper .id-photo-container img {
+  width: 100%;
+  height: auto;
+}
+.photo-wrapper .id-photo-container::after {
+  cursor: pointer;
+  content: "click to change";
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.photo-wrapper .id-photo-container:hover {
+  scale: 1.05;
+  transition: scale 0.3s ease;
+}
+.photo-wrapper .id-photo-container:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.picture-picker-wrapper {
+  position: absolute;
+  top: 42%;
+  margin-top: 1rem;
+  max-width: 500px;
+  padding: 0.5rem;
+  background-color: #2d2d2d;
+  border-radius: 10px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.picture-picker-wrapper.visible {
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.photo-grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  gap: 1.5rem 0;
+}
+.photo-grid .id-photo-container {
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 125px;
+}
+.photo-grid .id-photo-container img {
+  transition: scale 0.3s ease, opacity 0.5s ease;
+}
+.photo-grid .id-photo-container img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  scale: 1.1;
+  transition: scale 0.3s ease, opacity 0.5s ease;
+}
+
+.upload-photo {
+  display: none;
+}
+.upload-photo + label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  height: 100%;
+  max-height: 150px;
+  background-color: #141313;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.upload-photo + label:before {
+  content: "+";
+  font-size: 46px;
+  font-weight: 900;
+  color: #acc1aa;
+}
+
+.flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 750px) {
+  .flex-col {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.width-auto {
+  width: auto;
+  max-width: fit-content;
+}
+
+.personal-section {
+  align-items: flex-start;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  gap: 2rem;
+}
+.personal-section h2 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 300;
+  border-bottom: 2px solid white;
+  flex-shrink: 1;
+  min-width: fit-content;
+}
+.personal-section .name-input-wrapper {
+  width: fit-content;
+  max-width: 350px;
+  height: auto;
+  padding-inline: 1rem;
+  border-bottom: 2px dashed white;
+  display: flex;
+  align-items: center;
+}
+.personal-section .name-input-wrapper:focus-within {
+  outline: none;
+  border-color: #ba5622;
+}
+.personal-section .name-input-wrapper input {
+  width: 100%;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  font-weight: 500;
+  font-style: italic;
+}
+.personal-section .name-input-wrapper input::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-size: 2rem;
+}
+@media (max-width: 497px) {
+  .personal-section .name-input-wrapper input::placeholder {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 544px) {
+  .personal-section .name-input-wrapper input {
+    text-align: center;
+  }
+}
+.personal-section .flex-wrap {
+  flex-wrap: wrap;
+}
+@media (max-width: 750px) {
+  .personal-section {
+    padding: 0;
+    padding-top: 2rem;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+  }
+}
+
+.input-subtext {
+  display: block;
+  margin-top: 1rem;
+  color: #acc1aa;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.secondary-input-wrapper {
+  padding-top: 0.75rem;
+}
+.secondary-input-wrapper select,
+.secondary-input-wrapper input {
+  width: 100%;
+  max-width: 230px;
+  height: 50px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #2d2d2d;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  cursor: pointer;
+}
+.secondary-input-wrapper #terms {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  accent-color: #ba5622;
+}
+.secondary-title {
+  color: white;
+  font-size: 1.2rem !important;
+  border: none !important;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.g-1 {
+  gap: 1.5rem;
+}
+
+.spotify-connect-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+.spotify-connect-wrapper .button-disabled {
+  opacity: 0.3;
+  background-color: #141313;
+  color: white;
+  cursor: auto;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+.spotify-connect-wrapper .button-actionable {
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+.connection-success {
+  font-size: 3rem;
+  color: #ba5622;
+  background-color: #acc1aa;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  text-align: center;
+}
+.connection-success-sub {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+  background-color: #ba5622;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  text-align: center;
+}
+
+.load-spinner {
+  margin-left: 1rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid #acc1aa;
+  animation: spin 1s linear infinite;
+}
+
+.id-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  color: #acc1aa;
+  background-color: #2d2d2d;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.5s ease-in-out;
+}
+.id-close-button:hover {
+  color: #ba5622;
+  scale: 1.4;
+  transition: all 0.2s ease-in-out;
+}
+
+/*# sourceMappingURL=profileSetup.css.map */

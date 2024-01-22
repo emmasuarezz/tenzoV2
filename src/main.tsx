@@ -7,8 +7,12 @@ import { UserProvider } from "./Context/userContext";
 import TenzoStarLanding from "../src/star/src/Pages/Landing";
 import TenzoStarCalculate from "../src/star/src/Pages/Calculate";
 import TenzoStarResult from "../src/star/src/Pages/Result";
-import IdAuth from "../src/id/src/Routes/Auth";
-import IdSoon from "../src/id/src/Routes/Soon";
+import {
+  Auth as IdAuth,
+  Soon as IdSoon,
+  ProfileSetup as IdProfileSetup,
+  ConnectionSuccess as IdConnectionSpotify,
+} from "../src/id/src/Routes/";
 
 const App = () => {
   return (
@@ -25,6 +29,11 @@ const App = () => {
           <Route path="/star/result" element={<TenzoStarResult />} />
           <Route path="/id" element={<IdAuth />} />
           <Route path="/id/coming-soon" element={<IdSoon />} />
+          <Route path="/id/profile-setup" element={<IdProfileSetup />} />
+          <Route
+            path="/id/success-connection"
+            element={<IdConnectionSpotify />}
+          />
         </Routes>
       </UserProvider>
     </Router>

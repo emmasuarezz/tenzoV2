@@ -1,4 +1,5 @@
 import "../styles/CSS/auth.css";
+import "../styles/CSS/input.css";
 import { GoogleButton, SpotifyButton } from "../Components";
 import { useState, useEffect } from "react";
 import {
@@ -14,7 +15,7 @@ const SignIn = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="email"
-          className="input-auth"
+          className="input"
           placeholder="email"
           type="text"
           value={props.email}
@@ -30,7 +31,7 @@ const SignIn = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="password"
-          className="input-auth"
+          className="input"
           placeholder="password"
           type="password"
           value={props.password}
@@ -42,25 +43,17 @@ const SignIn = ({ ...props }: any) => {
       )}
       {props.error === "auth/invalid-credential" && (
         <p className="credential-error">
-          Hmm, seems like the email/password is incorrect.
+          Hmm, .
           <span onClick={() => props.setIsSignIn(false)}>
             create an account?
           </span>
-        </p>
-      )}
-      {props.error === "auth/too-many-requests" && (
-        <p className="credential-error">
-          Slow it down Speedy... Try again in 5 sec.
         </p>
       )}
       <div className="button-wrapper">
         <button
           className="submit-button"
           type="submit"
-          disabled={
-            (props.isSubmit && !props.isValid) ||
-            props.error === "auth/too-many-requests"
-          }
+          disabled={props.isSubmit && !props.isValid}
         >
           sign in
         </button>
@@ -72,7 +65,7 @@ const SignIn = ({ ...props }: any) => {
         <hr />
       </div>
       <GoogleButton />
-      <SpotifyButton />
+      <SpotifyButton text="Sign in with Spotify" />
     </>
   );
 };
@@ -83,8 +76,8 @@ const SignUp = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="name"
-          placeholder="full name"
-          className="input-auth"
+          placeholder="name"
+          className="input"
           type="text"
           value={props.name}
           onChange={(e) => props.setName(e.target.value)}
@@ -96,7 +89,7 @@ const SignUp = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="email-signUp"
-          className="input-auth"
+          className="input"
           placeholder="email"
           type="text"
           value={props.email}
@@ -112,7 +105,7 @@ const SignUp = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="password-signUp"
-          className="input-auth"
+          className="input"
           placeholder="password"
           type="password"
           value={props.password}
@@ -130,7 +123,7 @@ const SignUp = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="confirm-password"
-          className="input-auth"
+          className="input"
           placeholder="confirm password"
           type="password"
           value={props.confirmPassword}
@@ -278,13 +271,13 @@ function Auth() {
         setIsLoading(false);
         setSuccess(true);
       }, timeout);
-      setTimeout(() => {
-        window.location.href = "/id/coming-soon";
-      }, 5000);
     } catch (error: any) {
       setIsLoading(false);
-      console.log(error.code);
       setError(error.code);
+    } finally {
+      setTimeout(() => {
+        window.location.href = "/id/coming-soon";
+      }, 3000);
     }
   };
   const signUp = async (email: string, password: string) => {
@@ -294,12 +287,13 @@ function Auth() {
         setIsLoading(false);
         setSuccess(true);
       }, timeout);
-      setTimeout(() => {
-        window.location.href = "/id/coming-soon";
-      }, 5000);
     } catch (error) {
       setIsLoading(false);
       console.log(error);
+    } finally {
+      setTimeout(() => {
+        window.location.href = "/profile-setup";
+      }, 5000);
     }
   };
 
@@ -314,10 +308,8 @@ function Auth() {
       setIsLoading(true);
       setIsValid(true);
       if (isSignIn) {
-        console.log("signing in");
         signIn(email, password);
       } else {
-        console.log("signing up");
         signUp(email, password);
       }
     }
@@ -338,14 +330,6 @@ function Auth() {
       setIsValid(isFormValid);
     }
   }, [name, email, password, confirmPassword]);
-
-  useEffect(() => {
-    if (error === "auth/too-many-requests") {
-      setTimeout(() => {
-        setError("");
-      }, 5000);
-    }
-  }, [error]);
 
   return (
     <div className="auth-container">
@@ -432,7 +416,6 @@ function Auth() {
             Hold tight while we take you to{" "}
             {isSignIn ? "the homepage." : "your profile."}
           </p>
-          <button className="success-button">Go now</button>
         </div>
       )}
     </div>

@@ -70,3 +70,22 @@ $bg-image: url(../../assets/bg-soon.png);
     padding: 0.25rem;
   }
 }
+
+.profile-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+    color: black;
+    padding: 0.25rem;
+  }
+}

@@ -7,7 +7,7 @@ function Soon() {
     try {
       await signOut(auth);
       alert("You have been signed out");
-      window.location.href = "/id";
+      window.location.href = "/";
     } catch (error) {
       console.error(error);
     }
@@ -23,6 +23,13 @@ function Soon() {
       </h2>
       <h2>Stay tune, there's more to come...</h2>
       <h3>last updated: 01/19/2024 // tenzo</h3>
+
+      <h2
+        className="profile-button"
+        onClick={() => (window.location.href = "/id/profile-setup")}
+      >
+        Go to my profile
+      </h2>
 
       <button className="signOut-button" onClick={handleSignOut}>
         sign out

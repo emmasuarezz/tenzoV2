@@ -19,7 +19,7 @@
   pointer-events: none;
 }
 
-.input-auth {
+.input {
   position: relative;
   width: 100%;
   height: 100%;
@@ -30,11 +30,11 @@
   border: none;
   padding-inline: 1rem;
 }
-.input-auth::placeholder {
+.input::placeholder {
   font-weight: 300;
   opacity: 0.75;
 }
-.input-auth:focus {
+.input:focus {
   outline: none;
 }
 
