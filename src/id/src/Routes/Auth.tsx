@@ -271,13 +271,11 @@ function Auth() {
         setIsLoading(false);
         setSuccess(true);
       }, timeout);
+
+window.location.href = "/id/coming-soon"
     } catch (error: any) {
       setIsLoading(false);
       setError(error.code);
-    } finally {
-      setTimeout(() => {
-        window.location.href = "/id/coming-soon";
-      }, 3000);
     }
   };
   const signUp = async (email: string, password: string) => {
@@ -287,13 +285,12 @@ function Auth() {
         setIsLoading(false);
         setSuccess(true);
       }, timeout);
+
+      window.location.href = "/id/profile-setup"
     } catch (error) {
       setIsLoading(false);
       console.log(error);
-    } finally {
-      setTimeout(() => {
-        window.location.href = "/profile-setup";
-      }, 5000);
+      alert(error);
     }
   };
 
