@@ -15,7 +15,7 @@ const SignIn = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="email"
-          className="input"
+          className="id-input"
           placeholder="email"
           type="text"
           value={props.email}
@@ -31,7 +31,7 @@ const SignIn = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="password"
-          className="input"
+          className="id-input"
           placeholder="password"
           type="password"
           value={props.password}
@@ -77,7 +77,7 @@ const SignUp = ({ ...props }: any) => {
         <input
           id="name"
           placeholder="name"
-          className="input"
+          className="id-input"
           type="text"
           value={props.name}
           onChange={(e) => props.setName(e.target.value)}
@@ -89,7 +89,7 @@ const SignUp = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="email-signUp"
-          className="input"
+          className="id-input"
           placeholder="email"
           type="text"
           value={props.email}
@@ -105,7 +105,7 @@ const SignUp = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="password-signUp"
-          className="input"
+          className="id-input"
           placeholder="password"
           type="password"
           value={props.password}
@@ -123,7 +123,7 @@ const SignUp = ({ ...props }: any) => {
       <div className="input-wrapper">
         <input
           id="confirm-password"
-          className="input"
+          className="id-input"
           placeholder="confirm password"
           type="password"
           value={props.confirmPassword}
