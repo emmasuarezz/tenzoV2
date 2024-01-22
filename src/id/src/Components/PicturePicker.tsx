@@ -4,7 +4,7 @@ import avatar3 from "../assets/avatars/avatar03.png";
 import vinyl from "../assets/avatars/vinyl.png";
 import flower from "../assets/avatars/flower.png";
 
-import { ChangeEvent, useEffect } from "react";
+import { ChangeEvent } from "react";
 
 const avatars = [avatar1, avatar2, avatar3, vinyl, flower];
 

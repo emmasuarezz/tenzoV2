@@ -1,4 +1,3 @@
-import { set } from "firebase/database";
 import { useEffect } from "react";
 
 function ConnectionSuccess() {

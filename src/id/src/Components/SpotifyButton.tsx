@@ -11,8 +11,6 @@ function SpotifyButton({
   extraClass?: string;
   context?: any;
 }) {
-  const { setLoading } = useContext(ApiContext);
-
   function handleClick(e: any) {
     e.preventDefault();
     // setLoading(true);
