@@ -34,7 +34,7 @@ $bg-image: url("../../assets/bg-profile.png");
   font-size: 2rem;
   font-weight: 500;
   font-style: italic;
-  color: map-get(vars.$colors, "orange");
+  color: orange;
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -284,6 +284,35 @@ $bg-image: url("../../assets/bg-profile.png");
       cursor: pointer;
       accent-color: map-get(vars.$colors, "orange");
     }
+
+    ul {
+      max-width: 400px;
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+
+      color: white;
+      font-style: italic;
+      li {
+        font-weight: 500;
+        color: map-get(vars.$colors, "red");
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+        @media (max-width: 625px) {
+          text-align: center;
+        }
+      }
+
+      .profile-complete {
+        opacity: 0.45;
+        font-weight: 300 !important;
+        color: map-get(vars.$colors, "green");
+        transition: all 0.5s ease-in-out;
+      }
+    }
   }
   &-title {
     color: white;
@@ -375,5 +404,76 @@ $bg-image: url("../../assets/bg-profile.png");
     color: map-get(vars.$colors, "orange");
     scale: 1.4;
     transition: all 0.2s ease-in-out;
+  }
+}
+
+.complete {
+  &-wrapper {
+    display: flex;
+    width: 100%;
+
+    @media (max-width: 625px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  &-button {
+    &-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    background-color: map-get(vars.$colors, "darker-gray");
+    color: rgba(255, 255, 255, 0.374);
+    border: none;
+    font-size: 2rem;
+    max-width: 300px;
+    width: 100%;
+    padding: 1rem;
+    padding-inline: 2rem;
+    border-radius: 10px;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-color: map-get(vars.$colors, "darker-gray");
+      scale: 0.95;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &-active {
+      pointer-events: all;
+      background-color: map-get(vars.$colors, "green");
+      color: white;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.connectSpotify {
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  &-title {
+    color: white;
+    font-size: 1.2rem !important;
+    border: none !important;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 750px) {
+      width: 100%;
+      text-align: center;
+    }
   }
 }

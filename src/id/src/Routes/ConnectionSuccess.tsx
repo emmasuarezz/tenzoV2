@@ -1,3 +1,4 @@
+import { get } from "firebase/database";
 import { useEffect } from "react";
 
 function ConnectionSuccess() {
@@ -23,11 +24,7 @@ function ConnectionSuccess() {
         display_name: data.display_name,
         img: data.images[1].url,
       };
-
       localStorage.setItem("user", JSON.stringify(currentUser));
-      setTimeout(() => {
-        window.close();
-      }, 2000);
     } catch (error) {
       alert(error); // TODO: make this a modal or something idk
       window.location.href = "id/profile-setup";
@@ -42,8 +39,7 @@ function ConnectionSuccess() {
     <div className="profile-setup-container flex-col">
       <h1 className="connection-success">Successfully connected</h1>
       <h2 className="connection-success-sub">
-        Feel free to close this tab and finish your profile! It will close in 2
-        seconds.
+        Feel free to close this tab and finish your profile!
       </h2>
     </div>
   );

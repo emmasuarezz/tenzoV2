@@ -11,7 +11,6 @@ function SpotifyButton({
 }) {
   function handleClick(e: any) {
     e.preventDefault();
-    // setLoading(true);
     try {
       requestAuth(e);
     } catch (error) {
