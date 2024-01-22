@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import spotifyLogo from "../assets/spotifyLogo.webp";
 import { requestAuth } from "../spotifyApi.ts";
-import { ApiContext } from "../Context/spotifyContext.tsx";
 
 function SpotifyButton({
   text,
