@@ -1,6 +1,7 @@
 import "../styles/CSS/profileSetup.css";
 import { useState, useEffect } from "react";
 import { PicturePicker, SpotifyButton } from "../Components";
+import { set } from "firebase/database";
 
 function ProfileSetup() {
   const [spotifyConnected, setSpotifyConnected] = useState<boolean>(false);
@@ -10,6 +11,7 @@ function ProfileSetup() {
   const [fontSize, setFontSize] = useState("3rem");
   const [picture, setPicture] = useState<string | null>(null);
   const [changePicture, setChangePicture] = useState<boolean>(false);
+  const [spotifyImg, setSpotifyImg] = useState<string>("");
 
   const [user, setUser] = useState(() =>
     JSON.parse(localStorage.getItem("user") || "{}")
@@ -30,9 +32,12 @@ function ProfileSetup() {
       const user = JSON.parse(localStorage.getItem("user") || "{}");
       setUser(user);
       setPicture(user.img);
+      setSpotifyImg(user.img);
       setName(user.display_name);
       setNameSize(user.display_name ? user.display_name.length : 0);
-      setSpotifyConnected(true);
+      if (user.display_name !== "" && user.display_name !== undefined) {
+        setSpotifyConnected(true);
+      }
     };
 
     // Call the function once to set the initial state
@@ -109,6 +114,7 @@ function ProfileSetup() {
           setPicture={setPicture}
           setChangePicture={setChangePicture}
           isVisible={changePicture}
+          addImg={spotifyImg}
         />
 
         <div className="flex-col">

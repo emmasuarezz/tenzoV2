@@ -4,7 +4,7 @@ import avatar3 from "../assets/avatars/avatar03.png";
 import vinyl from "../assets/avatars/vinyl.png";
 import flower from "../assets/avatars/flower.png";
 
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
 
 const avatars = [avatar1, avatar2, avatar3, vinyl, flower];
 
@@ -12,10 +12,12 @@ function PicturePicker({
   setPicture,
   isVisible,
   setChangePicture,
+  addImg,
 }: {
   setPicture: Function;
   isVisible: boolean;
   setChangePicture: Function;
+  addImg?: string;
 }) {
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -42,6 +44,12 @@ function PicturePicker({
       reader.readAsDataURL(file);
     }
   };
+
+  useEffect(() => {
+    if (addImg) {
+      avatars.push(addImg);
+    }
+  }, [addImg]);
 
   return (
     <section className={`picture-picker-wrapper ${isVisible ? "visible" : ""}`}>

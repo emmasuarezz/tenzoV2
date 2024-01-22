@@ -24,6 +24,9 @@ function ConnectionSuccess() {
         img: data.images[1].url,
       };
       localStorage.setItem("user", JSON.stringify(currentUser));
+      setTimeout(() => {
+        window.close();
+      }, 2000);
     } catch (error) {
       alert(error); // TODO: make this a modal or something idk
       window.location.href = "id/profile-setup";
@@ -38,7 +41,8 @@ function ConnectionSuccess() {
     <div className="profile-setup-container flex-col">
       <h1 className="connection-success">Successfully connected</h1>
       <h2 className="connection-success-sub">
-        Feel free to close this tab and finish your profile!
+        Feel free to close this tab and finish your profile! It will
+        automatically close in 2 seconds.
       </h2>
     </div>
   );
