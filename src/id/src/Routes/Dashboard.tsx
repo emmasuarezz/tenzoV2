@@ -6,6 +6,7 @@ import "../styles/CSS/dashboard.css";
 
 function Dashboard() {
   const [activeUsers, setActiveUsers] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function getActiveUsers() {
     const snapshot = await get(ref(db, "users"));
@@ -14,7 +15,11 @@ function Dashboard() {
     return activeUsers;
   }
   useEffect(() => {
-    getActiveUsers().then((users) => setActiveUsers(users));
+    setIsLoading(true);
+    getActiveUsers().then((users) => {
+      setActiveUsers(users);
+      setIsLoading(false);
+    });
   }, []);
 
   const handleSignOut = async () => {
@@ -51,7 +56,13 @@ function Dashboard() {
         sign out
       </button>
       <h1>Dashboard</h1>
-      <div className="users-container">{usersCards}</div>
+      {isLoading ? (
+        <div className="spinner-wrapper">
+          <div className="loading-spinner"></div>
+        </div>
+      ) : (
+        <div className="users-container">{usersCards}</div>
+      )}
     </div>
   );
 }
