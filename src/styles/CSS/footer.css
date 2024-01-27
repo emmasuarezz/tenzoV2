@@ -44,7 +44,7 @@
 .logo {
   min-width: max-content;
 }
-.logo .flex {
+.logo .flex-footer {
   padding-top: 8px;
   display: flex;
   gap: 15px;

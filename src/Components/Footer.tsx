@@ -19,7 +19,7 @@ const Footer = () => {
         <p>
           <span>tenzo</span>.tech
         </p>
-        <div className="flex">
+        <div className="flex-footer">
           <div className="socials-balls">
             <a href="https://github.com/emmasuarezz" target="_blank">
               <img src={GitHub} alt="" />

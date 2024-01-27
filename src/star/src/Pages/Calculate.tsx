@@ -122,7 +122,7 @@ function Calculate() {
         Glad you decided to check it out!
         <br /> Just fill up the form and you will have your results in no time.
       </h1>
-      <div className="form-container">
+      <div className="star-form-container">
         <div className="form-border">
           <form className="form-group">
             <div className="input-group">
