@@ -2,7 +2,7 @@
 const prodURL = "https://tenzo.tech";
 
 const clientId = "85c5c6ee6c37437c82fa6a3f98d47c5c";
-const redirectUri = `${localURL}/id/success-connection`;
+const redirectUri = `${prodURL}/id/success-connection`;
 const scope = "user-read-private user-read-email user-top-read";
 
 const generateRandomString = (length: number) => {
