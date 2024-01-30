@@ -38,23 +38,24 @@ function Dashboard() {
       })
         .then((res) => res.json())
         .then((data) => {
-          const mappedTracks = data.tracks.items.map((track: any) => {
-            return {
-              name: track.name || "No name",
-              artist: track.artists[0].name || "No artist",
-              img:
-                track.album.images[0].url || "https://via.placeholder.com/150",
-              uri: track.uri || "No uri",
-              album: track.album.name || "No album",
-              id: track.id || "No id",
-            };
-          });
+          if (data.tracks) {
+            const mappedTracks = data.tracks.items.map((track: any) => {
+              return {
+                name: track.name || "No name",
+                artist: track.artists[0].name || "No artist",
+                img:
+                  track.album.images[0].url ||
+                  "https://via.placeholder.com/150",
+                uri: track.uri || "No uri",
+                album: track.album.name || "No album",
+                id: track.id || "No id",
+              };
+            });
 
-          if (!data.tracks) {
-            setTracks([{ name: "No tracks found" }]);
-          } else {
             setTracks(mappedTracks);
             console.log(mappedTracks);
+          } else {
+            console.log("no tracks");
           }
         });
     }
