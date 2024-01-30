@@ -49,6 +49,11 @@ function Dashboard() {
               id: track.id || "No id",
             };
           });
+
+          if (!data.tracks) {
+            setTracks([{ name: "No tracks found" }]);
+          }
+
           setTracks(mappedTracks);
           console.log(mappedTracks);
         });
