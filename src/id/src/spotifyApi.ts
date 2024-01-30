@@ -1,5 +1,5 @@
-const localURL = "http://localhost:5173";
-// const prodURL = "https://tenzo.tech";
+// const localURL = "http://localhost:5173";
+const prodURL = "https://tenzo.tech";
 
 const clientId = "85c5c6ee6c37437c82fa6a3f98d47c5c";
 const redirectUri = `${localURL}/id/success-connection`;
