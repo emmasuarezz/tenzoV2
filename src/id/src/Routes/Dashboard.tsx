@@ -52,10 +52,10 @@ function Dashboard() {
 
           if (!data.tracks) {
             setTracks([{ name: "No tracks found" }]);
+          } else {
+            setTracks(mappedTracks);
+            console.log(mappedTracks);
           }
-
-          setTracks(mappedTracks);
-          console.log(mappedTracks);
         });
     }
   }, [trackInput]);
