@@ -1,6 +1,9 @@
 .dash-wrapper {
   color: white;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .dash-wrapper h1 {
   width: 100%;
@@ -22,35 +25,242 @@
 }
 
 .users-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
   gap: 2rem;
   padding: 1rem;
   margin-top: 1rem;
+  max-height: 250px;
+  overflow-y: auto;
 }
 .users-container .user-card {
   max-height: 150px;
-  max-width: 400px;
+  width: 100%;
   background-color: #acc1aa;
-  border: 2px solid green;
+  box-shadow: inset 0 0 20px 4px rgba(35, 35, 35, 0.37);
   border-radius: 10px;
   display: flex;
   padding: 0.45rem;
 }
 .users-container .user-card img {
-  max-width: 150px;
+  max-width: 100px;
+  max-height: 100px;
   border-radius: 100%;
-}
-.users-container .user-card h2 {
-  width: 100%;
-  text-align: center;
+  margin-right: 1rem;
 }
 .users-container .user-card .text-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.id-timeline {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 1rem;
+}
+.id-timeline h2 {
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.id-timeline h2 span {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: none;
+  cursor: pointer;
+}
+.id-timeline .timeline-card {
+  background-color: white;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+.id-timeline .timeline-card-title {
+  background-color: #acc1aa;
+  color: white;
+  padding: 0.15rem;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.id-timeline .timeline-card-sub {
+  padding-left: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.409);
+  color: white;
+  font-weight: 300;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0;
+}
+.id-timeline .timeline-card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  gap: 1.25rem;
+}
+
+.add-track-modal {
+  width: 100%;
+  max-width: 800px;
+  align-self: center;
+  background-color: #701f1f;
+  color: white;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.add-track-modal h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  text-decoration: underline;
+  color: white;
+}
+.add-track-modal input {
+  max-width: 600px;
+  min-height: 60px;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: white;
+  font-size: 1.6rem;
+  font-style: italic;
+  outline: none;
+  border: none;
+}
+.add-track-modal .close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+}
+.add-track-modal .track-selector {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+.add-track-modal .track-selector button {
+  margin-top: 0.5rem;
+  height: 60px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #2d2d2d;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+}
+.add-track-modal .track-selector button:disabled {
+  background-color: #1f1e1e;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+.add-track-modal .track-result {
+  width: 100%;
+  background-color: #1f1e1e;
+  min-height: 100px;
+  overflow: hidden;
+  border: #701f1f 2px dashed;
+  display: flex;
+  transition: all 0.2s ease-in-out;
+}
+.add-track-modal .track-result img {
+  max-width: 100px;
+  padding: 0.55rem;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+.add-track-modal .track-result .padd-1 {
+  padding: 0.5rem;
+}
+.add-track-modal .track-result-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 0.75rem;
+}
+.add-track-modal .track-result:hover {
+  background-color: #2d2d2d;
+  transition: all 0.2s ease-in-out;
+}
+.add-track-modal .track-result:hover img {
+  padding: 0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+.add-track-modal .track-result:focus {
+  background-color: #acc1aa;
+}
+.add-track-modal .track-result:focus img {
+  padding: 0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-post-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: #ba5622;
+  max-width: 800px;
+  width: 100%;
+  min-height: 500px;
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+.add-post-modal .close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+}
+.add-post-modal h3 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  color: #701f1f;
+}
+.add-post-modal hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: #701f1f 1px solid;
+}
+.add-post-modal img {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=dashboard.css.map */

@@ -12,8 +12,7 @@ const generateRandomString = (length: number) => {
   return values.reduce((acc, x) => acc + possible[x % possible.length], "");
 };
 
-export const requestAuth = (e: any) => {
-  e.preventDefault();
+export const requestAuth = () => {
   const state = generateRandomString(16);
 
   localStorage.setItem("stateKey", state);

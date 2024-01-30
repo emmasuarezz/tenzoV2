@@ -49,6 +49,10 @@ $bg-image: url(../../assets/bg-soon.png);
     text-align: center;
 
     font-style: italic;
+    &:last-of-type {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 }
 

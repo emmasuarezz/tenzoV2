@@ -3,6 +3,7 @@ import { db, auth } from "../firebase";
 import { ref, set } from "firebase/database";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { useEffect } from "react";
+import { requestAuth } from "../spotifyApi";
 
 function Soon() {
   const handleSignOut = async () => {
@@ -29,6 +30,31 @@ function Soon() {
 
     // Clean up subscription on unmount
     return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    async function checkApi() {
+      try {
+        const url = `https://api.spotify.com/v1/me`;
+
+        const res = await fetch(url, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+
+        const data = await res.json();
+        console.log(data);
+      } catch (error) {
+        requestAuth();
+      }
+    }
+    checkApi();
   }, []);
 
   return (
