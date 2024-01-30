@@ -33,6 +33,7 @@ function Soon() {
   }, []);
 
   useEffect(() => {
+    let retries = 0;
     async function checkApi() {
       try {
         const url = `https://api.spotify.com/v1/me`;
@@ -51,7 +52,14 @@ function Soon() {
         const data = await res.json();
         console.log(data);
       } catch (error) {
-        requestAuth();
+        if (retries < 3) {
+          // Limit the number of retries
+          retries++;
+          await requestAuth(); // Await the authentication request
+          checkApi();
+        } else {
+          console.error("Failed to fetch data after 3 retries", error);
+        }
       }
     }
     checkApi();
