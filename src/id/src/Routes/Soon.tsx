@@ -31,14 +31,9 @@ function Soon() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in, set status to true
         set(ref(db, "users/" + user.uid + "/status"), true);
-      } else {
-        // User is signed out, do nothing
       }
     });
-
-    // Clean up subscription on unmount
     return () => unsubscribe();
   }, []);
 
@@ -70,6 +65,20 @@ function Soon() {
         checkApi();
       } else {
         window.location.href = "/id";
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        const newSignIn = {
+          display_name: user.displayName,
+          email: user.email,
+          id: user.uid,
+          photo_url: user.photoURL,
+        };
+        localStorage.setItem("user", JSON.stringify(newSignIn));
       }
     });
   }, []);

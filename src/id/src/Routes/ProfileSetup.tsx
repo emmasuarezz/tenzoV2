@@ -203,7 +203,7 @@ function ProfileSetup() {
     const current = auth.currentUser;
 
     const userDB = {
-      name: name,
+      display_name: name,
       age: age,
       img: picture,
       status: true,
@@ -218,6 +218,7 @@ function ProfileSetup() {
         });
       }
     );
+    localStorage.setItem("user", JSON.stringify(userDB));
   }
 
   return (

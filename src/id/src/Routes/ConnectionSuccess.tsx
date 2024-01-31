@@ -19,11 +19,11 @@ function ConnectionSuccess() {
       });
       const data = await result.json();
 
-      let currentUser = {
+      let spotifyUser = {
         display_name: data.display_name,
         img: data.images[1].url,
       };
-      localStorage.setItem("user", JSON.stringify(currentUser));
+      localStorage.setItem("spotify-user", JSON.stringify(spotifyUser));
       setTimeout(() => {
         window.close();
       }, 2000);

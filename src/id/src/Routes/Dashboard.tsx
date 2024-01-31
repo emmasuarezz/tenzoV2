@@ -14,6 +14,8 @@ function Dashboard() {
   const [hideButton, setHideButton] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
 
   useEffect(() => {
     if (!loggingOut) {
@@ -176,10 +178,23 @@ function Dashboard() {
 
   return (
     <div className="dash-wrapper">
-      <button className="signOut-button" onClick={handleSignOut}>
-        sign out
-      </button>
-      <h1>Dashboard</h1>
+      <div className="container-dash-top">
+        <img
+          onClick={() => setShowMenu(!showMenu)}
+          className="avatar-top-bar"
+          src={user!.img}
+          alt="User profile picture"
+        />
+        <h1>Dashboard</h1>
+      </div>
+      {showMenu && (
+        <div className="avatar-menu">
+          <h2>Hello {user!.display_name}</h2>
+          <span>{user!.email}</span>
+          <button>profile</button>
+          <button onClick={handleSignOut}>sign out</button>
+        </div>
+      )}
       {isLoading ? (
         <div className="spinner-wrapper">
           <div className="loading-spinner"></div>
