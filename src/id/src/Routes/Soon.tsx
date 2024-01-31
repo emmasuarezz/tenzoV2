@@ -11,6 +11,16 @@ function Soon() {
     try {
       set(ref(db, "users/" + currentUser!.uid + "/status"), false);
       await signOut(auth).then(() => {
+        const logoutWindow = window.open(
+          "https://www.spotify.com/logout/",
+          "_blank"
+        );
+        if (logoutWindow) {
+          logoutWindow.addEventListener("load", () => {
+            logoutWindow.close();
+          });
+        }
+        localStorage.clear();
         window.location.href = "/id";
       });
     } catch (error) {
@@ -54,7 +64,14 @@ function Soon() {
         requestAuth();
       }
     }
-    checkApi();
+
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        checkApi();
+      } else {
+        window.location.href = "/id";
+      }
+    });
   }, []);
 
   return (
@@ -71,7 +88,7 @@ function Soon() {
       <h3 onClick={() => (window.location.href = "/id/dash")}>Dashboard</h3>
       <h2
         className="profile-button"
-        onClick={() => (window.location.href = "/id/profile-setup")}
+        onClick={() => (window.location.href = "/id/profile")}
       >
         Go to my profile
       </h2>

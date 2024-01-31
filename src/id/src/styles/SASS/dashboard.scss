@@ -34,7 +34,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: minmax(100px, auto);
+  grid-auto-rows: minmax(120px, auto);
   gap: 2rem;
   padding: 1rem;
   margin-top: 1rem;
@@ -49,11 +49,20 @@
     display: flex;
     padding: 0.45rem;
 
-    img {
-      max-width: 100px;
-      max-height: 100px;
-      border-radius: 100%;
-      margin-right: 1rem;
+    &-img-wrapper {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        object-fit: cover;
+      }
     }
 
     .text-container {

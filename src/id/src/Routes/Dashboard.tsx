@@ -4,6 +4,8 @@ import { signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import "../styles/CSS/dashboard.css";
 import { TimelineCard } from "../Components";
+import { requestAuth } from "../spotifyApi";
+
 function Dashboard() {
   const [activeUsers, setActiveUsers] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -12,6 +14,17 @@ function Dashboard() {
   const [tracks, setTracks] = useState<any[]>([]);
   const [hideButton, setHideButton] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [loggingOut, setLoggingOut] = useState(false);
+
+  useEffect(() => {
+    if (!loggingOut) {
+      auth.onAuthStateChanged((user) => {
+        if (!user) {
+          window.location.href = "/id";
+        }
+      });
+    }
+  }, []);
 
   async function getActiveUsers() {
     const snapshot = await get(ref(db, "users"));
@@ -62,10 +75,21 @@ function Dashboard() {
   }, [trackInput]);
 
   const handleSignOut = async () => {
+    setLoggingOut(true);
     const currentUser = auth.currentUser;
     try {
       set(ref(db, "users/" + currentUser!.uid + "/status"), false);
       await signOut(auth).then(() => {
+        const logoutWindow = window.open(
+          "https://www.spotify.com/logout/",
+          "_blank"
+        );
+        if (logoutWindow) {
+          logoutWindow.addEventListener("load", () => {
+            logoutWindow.close();
+          });
+        }
+        localStorage.clear();
         window.location.href = "/id";
       });
     } catch (error) {
@@ -78,7 +102,9 @@ function Dashboard() {
 
   const usersCards = activeUsers.map((user) => (
     <div className="user-card">
-      <img src={user.img} alt="" />
+      <div className="user-card-img-wrapper">
+        <img src={user.img} alt="" />
+      </div>
       <div className="text-container">
         <div className="top-text">
           <h2 style={{ color: "white" }}>{user.name}</h2>
@@ -120,7 +146,6 @@ function Dashboard() {
               const track = {
                 name: data.name,
                 artist: data.artists[0].name,
-                artist2: data.artists[1].name || "",
                 img: data.album.images[0].url,
                 uri: data.uri,
                 album: data.album.name,

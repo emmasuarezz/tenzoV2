@@ -13,6 +13,7 @@ import {
   ProfileSetup as IdProfileSetup,
   ConnectionSuccess as IdConnectionSpotify,
   Dashboard as IdDashboard,
+  Profile as IdProfile,
 } from "../src/id/src/Routes/";
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/id" element={<IdAuth />} />
           <Route path="/id/coming-soon" element={<IdSoon />} />
           <Route path="/id/profile-setup" element={<IdProfileSetup />} />
+          <Route path="/id/profile" element={<IdProfile />} />
           <Route
             path="/id/success-connection"
             element={<IdConnectionSpotify />}

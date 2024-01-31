@@ -3,6 +3,8 @@ import avatar2 from "../assets/avatars/avatar02.png";
 import avatar3 from "../assets/avatars/avatar03.png";
 import vinyl from "../assets/avatars/vinyl.png";
 import flower from "../assets/avatars/flower.png";
+import { storage } from "../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import { ChangeEvent, useEffect } from "react";
 
@@ -13,35 +15,46 @@ function PicturePicker({
   isVisible,
   setChangePicture,
   addImg,
+  setLoadingIMG,
 }: {
   setPicture: Function;
   isVisible: boolean;
   setChangePicture: Function;
   addImg?: string;
+  setLoadingIMG?: Function;
 }) {
-  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+  const handleFileChange = (event: any) => {
+    const file = event.target.files[0];
     if (file) {
-      const fileSize = file.size / 1024 / 1024; // in MiB
-      const fileType = file.type;
-      const validImageTypes = ["image/gif", "image/jpeg", "image/png"];
+      // Create a storage reference
+      const storageRef = ref(storage, `avatars/${file.name}`);
 
-      if (fileSize > 4) {
-        // Change this to your desired maximum file size
-        alert("File is too large. Please upload a file smaller than 2 MiB.");
-        return;
-      }
-
-      if (!validImageTypes.includes(fileType)) {
-        alert("Invalid file type. Please upload a GIF, JPEG, or PNG image.");
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPicture(reader.result);
+      // Create the file metadata
+      const metadata = {
+        contentType: file.type,
       };
-      reader.readAsDataURL(file);
+
+      // Upload file and metadata to the object 'images/mountains.jpg'
+      const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+
+      // Listen for state changes, errors, and completion of the upload.
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          setLoadingIMG!(true);
+        },
+        (error) => {
+          setLoadingIMG!(false);
+          console.error(error);
+        },
+        () => {
+          // Handle successful uploads on complete
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            setPicture(downloadURL);
+            setLoadingIMG!(false);
+          });
+        }
+      );
     }
   };
 

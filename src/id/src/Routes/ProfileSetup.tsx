@@ -20,6 +20,15 @@ function ProfileSetup() {
   );
 
   const [disabled, setDisabled] = useState<boolean>(true);
+  const [loadingIMG, setLoadingIMG] = useState<boolean>(false);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (!user) {
+        window.location.href = "/id";
+      }
+    });
+  }, []);
 
   useEffect(() => {
     if (nameSize > 0) {
@@ -109,13 +118,21 @@ function ProfileSetup() {
         <section className="photo-wrapper">
           <div
             className="id-photo-container"
-            onClick={() => setChangePicture(!changePicture)}
+            onClick={() => {
+              if (!loadingIMG) {
+                setChangePicture(!changePicture);
+              }
+            }}
           >
-            <img
-              src={picture ? picture : "https://via.placeholder.com/150"}
-              alt="profile"
-              className="profile-photo"
-            />
+            {loadingIMG ? (
+              <div className="loading-img">Loading!</div>
+            ) : (
+              <img
+                src={picture ? picture : "https://via.placeholder.com/150"}
+                alt="profile"
+                className="profile-photo"
+              />
+            )}
           </div>
         </section>
         <PicturePicker
@@ -123,6 +140,7 @@ function ProfileSetup() {
           setChangePicture={setChangePicture}
           isVisible={changePicture}
           addImg={spotifyImg}
+          setLoadingIMG={setLoadingIMG}
         />
 
         <div className="flex-col">

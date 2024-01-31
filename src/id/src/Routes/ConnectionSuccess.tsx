@@ -35,8 +35,6 @@ function ConnectionSuccess() {
 
   useEffect(() => {
     getUser(getToken());
-    alert("Successfully connected to Spotify!");
-    alert(localStorage.getItem("token"));
   }, []);
 
   return (
