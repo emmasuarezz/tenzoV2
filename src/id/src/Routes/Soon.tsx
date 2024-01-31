@@ -76,7 +76,7 @@ function Soon() {
           display_name: user.displayName,
           email: user.email,
           id: user.uid,
-          photo_url: user.photoURL,
+          img: user.photoURL,
         };
         localStorage.setItem("user", JSON.stringify(newSignIn));
       }
