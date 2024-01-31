@@ -4,7 +4,6 @@ import { signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import "../styles/CSS/dashboard.css";
 import { TimelineCard } from "../Components";
-import { requestAuth } from "../spotifyApi";
 
 function Dashboard() {
   const [activeUsers, setActiveUsers] = useState<any[]>([]);

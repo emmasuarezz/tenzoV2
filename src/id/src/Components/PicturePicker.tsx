@@ -6,7 +6,7 @@ import flower from "../assets/avatars/flower.png";
 import { storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
-import { ChangeEvent, useEffect } from "react";
+import { useEffect } from "react";
 
 const avatars = [avatar1, avatar2, avatar3, vinyl, flower];
 
@@ -34,15 +34,15 @@ function PicturePicker({
         contentType: file.type,
       };
 
+      setLoadingIMG!(true);
+
       // Upload file and metadata to the object 'images/mountains.jpg'
       const uploadTask = uploadBytesResumable(storageRef, file, metadata);
 
       // Listen for state changes, errors, and completion of the upload.
       uploadTask.on(
         "state_changed",
-        (snapshot) => {
-          setLoadingIMG!(true);
-        },
+        null,
         (error) => {
           setLoadingIMG!(false);
           console.error(error);
