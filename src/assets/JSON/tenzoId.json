@@ -3,7 +3,7 @@
     "content": ["HEADING"],
     "title": "tnz.ID",
     "subtitle": "Spotify powered web app. Get the BPM, key and more of whatever song you want (as long as it's in Spotify)",
-    "tech": ["react.js", "saas", "spotify API"],
+    "tech": ["react.js", "saas", "spotify API", "node & express"],
     "headings": ["under construction... it's gonna be filled soon!"],
     "paragraphs": [],
     "link": "https://tenzoid.live/"
