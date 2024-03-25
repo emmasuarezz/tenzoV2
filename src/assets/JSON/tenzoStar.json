@@ -1,6 +1,6 @@
 [
   {
-    "content": ["HEADING"],
+    "content": ["HEADING", "PARAGRAPH"],
     "title": "tenzo.star",
     "subtitle": "Astrology web app that allows you to see your natal chart, in a nice and simple way.",
     "tech": [
@@ -11,8 +11,8 @@
       "REST countries"
     ],
     "headings": ["under construction... it's gonna be filled soon!"],
-    "paragraphs": [],
-    "link": "/star"
+    "paragraphs": ["I'm making V2, you are going to love it!"],
+    "link": ""
   },
 
   {
