@@ -1,11 +1,9 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../Context/userContext";
 
 import "../styles/CSS/Landing.css";
 import "../styles/CSS/utils.css";
 import { About, Footer, Navbar, BlogCard } from "../Components";
-// @ts-ignore
 import Design from "../assets/design.svg";
 import Behance from "../assets/behance.png";
 import GitHub from "../assets/github.svg";
@@ -24,7 +22,6 @@ function Landing() {
 
   const showButton = indexOfLastEntry < blogEntries.length;
 
-  const { user } = useContext(UserContext);
   return (
     <>
       <Navbar color="gradient-orange" />
@@ -34,7 +31,7 @@ function Landing() {
             <h1>
               Welcome
               <br />
-              <span>{user}</span>!
+              <span>friend</span>!
             </h1>
             <p className="subtitle">
               Hey! Thanks for stopping by.
