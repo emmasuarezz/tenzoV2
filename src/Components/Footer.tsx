@@ -37,7 +37,13 @@ const Footer = () => {
             <img src={Behance} alt="" />
           </div>
         </div>
-        <p>made with a lot of love, and mate {`<3`}</p>
+        <p>
+          made with a lot of love, and{" "}
+          <a target="_blank" href="https://en.wikipedia.org/wiki/Mate_(drink)">
+            mate
+          </a>{" "}
+          {`<3`}
+        </p>
       </div>
       <div className="deco-wrapper">
         <div className="left-ornament-top"></div>
